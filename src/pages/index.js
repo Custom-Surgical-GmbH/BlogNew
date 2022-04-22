@@ -1,11 +1,23 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+import Item from "../components/category"
+import Bio from "../components/bio"
+/*import Blocks from "../components/blocks"*/
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { StaticImage } from "gatsby-plugin-image"
+
+
+const BlogIndex =  ({data,  location }) => {
+
+  console.log(data)
+  
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -13,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-        <Bio />
+       
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -22,23 +34,33 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
+  
 
   return (
+   
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <Item />
+      <hr className="line"></hr>
+  
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item  >
+        <ol style={{ listStyle: `none` }} className="news_block">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
+          
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="list">
               <article
                 className="post-list-item"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header>
+                
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
@@ -59,6 +81,14 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+        </Grid></Grid></Box>
+      
+      
+      
+     
+  
+ 
+
     </Layout>
   )
 }
@@ -82,8 +112,10 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featuredImage
         }
       }
     }
   }
 `
+

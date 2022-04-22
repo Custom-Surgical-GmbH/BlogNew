@@ -58,6 +58,25 @@ module.exports = {
     //   },
     // },
     {
+
+
+      
+
+      resolve: `gatsby-plugin-addsocialshare-share`,
+      options: {
+        size: 48,
+        //providers:{"facebook":"Facebook","linkedin":"Linkedin","pinterest":"Pinterest","twitter":"Twitter","cloudshare":"Cloud Share"},
+        //corners:"5%",
+        //bgcolor:"#000000",
+        interfacetype: "floating", //inline,floating
+        topoffset: "20%", //work only floating interface
+        id: ".ass_interface",
+        alignment_desktop: "left", //left,right,hide
+        alignment_mobile: "bottom", //top,bottom,hide
+      },
+
+
+
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `

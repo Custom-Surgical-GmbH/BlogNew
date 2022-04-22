@@ -6,53 +6,71 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Bio = () => {
+import Item from "../components/category"
+
+import logo from '/src/images/logo.png'
+
+const Bio = (post) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
+      allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, limit: 1) {
+        nodes {
+          excerpt
+          fields {
+            slug
           }
-          social {
-            twitter
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tags
+            featuredImage
           }
         }
       }
     }
   `)
 
+
+  console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+ /* const author = data.site.siteMetadata?.author
+  const social = data.site.siteMetadata?.social*/
 
   return (
     <div className="bio">
+       
+
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
+        src="../images/us.jpg"
+        quality={100}
         alt="Profile picture"
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
+       
+     <div className="text_flex"> <div style={{color: "white"}}>
+    {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
+  <strong key={i}>
+    {tag}
+    {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1 ? ', ' : ''}
+  </strong>
+])}</div>
+     <div className="article_h2"><h2 style={{color: "white"}}> {data.allMarkdownRemark.nodes[0].frontmatter.title} Lorem Ipsum</h2></div>
+     
+        <p style={{color: "white"}}>{data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
-      )}
-    </div>
+       
+       <button className="article_button"><Link to={data.allMarkdownRemark.nodes[0].fields.slug} itemProp="url">READ</Link></button>
+    </div></div>
   )
+
 }
 
 export default Bio
+
+

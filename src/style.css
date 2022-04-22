@@ -107,7 +107,14 @@ h6 {
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
 }
-
+h1>a:hover,
+h2>a:hover,
+h3>a:hover,
+h4>a:hover,
+h5>a:hover,
+h6>a:hover {
+  color: var(--color-text-light);
+}
 h2,
 h3,
 h4,
@@ -187,9 +194,9 @@ li > p {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
 
-li *:last-child {
+/*li *:last-child {
   margin-bottom: var(--spacing-0);
-}
+}*/
 
 li > ul {
   margin-left: var(--spacing-8);
@@ -235,15 +242,15 @@ a {
 
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Custom classes */
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+ /* max-width: var(--maxWidth-wrapper);*/
+ 
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -251,7 +258,7 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  background-color: #202026;
 }
 
 .main-heading {
@@ -289,17 +296,19 @@ a:focus {
 .bio {
   display: flex;
   margin-bottom: var(--spacing-16);
+  background-color: #202026;
+    padding-bottom: 10%;
 }
 
 .bio p {
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--spacing-5);
+
 }
 
 .bio-avatar {
-  margin-right: var(--spacing-4);
+  margin-right: 5%;
   margin-bottom: var(--spacing-0);
-  min-width: 50px;
-  border-radius: 100%;
+
 }
 
 .blog-post header h1 {
@@ -319,6 +328,145 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+
+
+/*  Рендерим элементы как колонки */
+.news_block {
+  display: flex;
+  flex-flow: column wrap;
+  flex-direction: row;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*  Меняем порядок элементов, делая как бы строчную расстановку */
+.list:nth-child(1n+1) {
+  order: 2;
+  width: 48%;
+  margin: 1%;
+  border: 3px solid;
+  border-radius: 5px;
+}
+
+/* Новые колонки разделители */
+.news_block::before,
+.news_block::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+.post-list-item {
+  margin-bottom: var(--spacing-8);
+  margin-top: var(--spacing-8);
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.global-header{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 50px;
+}
+
+.bio{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer{
+  max-width: var(--maxWidth-wrapper);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text_flex{
+width: 30%;
+}
+
+.tags{
+  display: flex;
+}
+
+.tags p:nth-child(1){
+  margin-right: 10%;
+}
+
+.article_h2{
+  padding-bottom: 5%;
+}
+
+.article_button{
+ background-color:  #C4C4C4;
+ padding: 15px 45px;
+ margin-top: 5%;
+}
+
+.category{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 2%;
+
+}
+
+.category_text{
+  margin-right: 10%;
+}
+
+
+.box{
+  margin-top: 0;
+}
+
+.line{
+  margin-bottom: 5%;
+}
+
+.top{
+  display: flex;
+}
+
+.article_top{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tags{
+  display: flex;
+  width: 20%;
+  
+}
+
+.share-btn {
+  display: inline-block;
+  color: #ffffff;
+  border: none;
+  padding: 0.1em 0.6em;
+  outline: none;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0 0.2em;
+}
+
+.share-btn:focus,
+.share-btn:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.share-btn:active {
+  color: #e2e2e2;
+}
+
+.share-btn.twitter     { background: #55acee; }
+.share-btn.facebook    { background: #3B5998; }
+.share-btn.linkedin    { background: #4875B4; }
 /* Media queries */
 
 @media (max-width: 42rem) {
