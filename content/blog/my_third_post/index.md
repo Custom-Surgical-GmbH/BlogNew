@@ -3,7 +3,7 @@ title: Third
 date: "2018-05-01T22:12:03.284Z"
 description: "Hello World"
 tags: ["Second", "Post"]
-featuredImage: logo
+featuredImage: profile-pic
 ---
 
 This is my first post on my new fake blog! How exciting!
