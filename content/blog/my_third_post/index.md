@@ -4,6 +4,7 @@ date: "2018-05-01T22:12:03.284Z"
 description: "Hello World"
 tags: ["News", "Education"]
 featuredImage: profile-pic
+image: "./profile-pic.png"
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -4,12 +4,8 @@ date: "2022-04-07T23:46:37.121Z"
 tags: ["News", "Medtech", "Articles"]
 description: "Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was…"
 featuredImage: logo
+image: "./cute-dog.jpg"
 ---
-
-
-
-
-
 
 Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!
 
@@ -53,7 +49,7 @@ In February, we were happy to welcome Marc Frigola to our team. Mark took over o
 
 <h2><b>March - MicroREC Android app</h2></b>
 
- roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
+roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
 
 l Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
 
@@ -71,5 +67,5 @@ In February, we were happy to welcome Marc Frigola to our team. Mark took over o
 
 In March, we launched our Andr
 In March, we launched our Android app for MicroREC. The app was aimed to improve the shooting experience in operating rooms. Regular photo apps don’t allow you to adjust focus from fingers or instruments on pupils and mix up medical imagery with personal files in a camera roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
- 
+
 ![alt text](images/cute-dog.jpg "Cute dog")
