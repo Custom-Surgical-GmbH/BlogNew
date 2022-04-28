@@ -60,13 +60,29 @@ const BlogIndex =  ({data,  location }) => {
                 itemType="http://schema.org/Article"
               >
                 <header>
-                
+                <StaticImage
+          className="bio-avatar"
+        
+          src="../images/us.jpg"
+          quality={100}
+          alt="Profile picture"
+        />
+        <small>{post.frontmatter.date}</small>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  
+                  <div>  
+          
+     <div >
+    {post.frontmatter.tags.map((tag, i) => [
+  <strong key={i}>
+    {tag}
+    {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
+  </strong>
+])}</div></div>
                 </header>
                 <section>
                   <p
@@ -105,7 +121,7 @@ export const pageQuery = graphql`
         }
         allMarkdownRemark(
           sort: {fields: [frontmatter___date], order: DESC}
-          filter: {frontmatter: {tags: {eq: "Gatsby"}}}
+          filter: {frontmatter: {tags: {eq: "Education"}}}
         ) {
           nodes {
             excerpt

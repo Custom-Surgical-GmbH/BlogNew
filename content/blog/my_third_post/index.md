@@ -2,7 +2,7 @@
 title: Third
 date: "2018-05-01T22:12:03.284Z"
 description: "Hello World"
-tags: ["Second", "Post"]
+tags: ["News", "Education"]
 featuredImage: profile-pic
 ---
 

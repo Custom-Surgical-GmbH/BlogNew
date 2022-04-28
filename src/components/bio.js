@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import Button from '@mui/material/Button';
 
 import Item from "../components/category"
 
@@ -19,6 +20,7 @@ const Bio = (post) => {
       allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, limit: 1) {
         nodes {
           excerpt
+          timeToRead
           fields {
             slug
           }
@@ -43,7 +45,7 @@ const Bio = (post) => {
   return (
     <div className="bio">
        
-
+     
       <StaticImage
         className="bio-avatar"
         layout="fixed"
@@ -53,19 +55,19 @@ const Bio = (post) => {
         alt="Profile picture"
       />
        
-     <div className="text_flex"> <div style={{color: "white"}}>
+     <div className="bio_text_flex">  <div style={{color: "white"}}>
     {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
   <strong key={i}>
     {tag}
     {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1 ? ', ' : ''}
   </strong>
 ])}</div>
-     <div className="article_h2"><h2 style={{color: "white"}}> {data.allMarkdownRemark.nodes[0].frontmatter.title} Lorem Ipsum</h2></div>
+     <div className="article_h2"><h2 style={{color: "white"}}> {data.allMarkdownRemark.nodes[0].frontmatter.title}</h2></div>
      
         <p style={{color: "white"}}>{data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
+        <Button variant="contained"><Link to={data.allMarkdownRemark.nodes[0].fields.slug} style={{color: "white"}}  itemProp="url">Outlined</Link></Button>
        
-       <button className="article_button"><Link to={data.allMarkdownRemark.nodes[0].fields.slug} itemProp="url">READ</Link></button>
     </div></div>
   )
 

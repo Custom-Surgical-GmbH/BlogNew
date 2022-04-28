@@ -39,8 +39,8 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          
-          <Link className="header-link-home" to="/">
+          <div className="flex_post"><div>
+          <div className="blog_header"><Link className="header-link-home" to="/">
           &#8592;Blog
       </Link>
     <div>
@@ -49,10 +49,10 @@ const BlogPostTemplate = ({ data, location }) => {
     {tag}
     {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
   </strong>
-])}</div>
+])}</div></div>
      <h1 itemProp="headline">{post.frontmatter.title}</h1>
     
-   <div>  <a href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>" class="share-btn twitter"> 
+   <div className="sharing_icon">  <a href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>" class="share-btn twitter"> 
     Twitter
 </a>
 
@@ -61,8 +61,8 @@ const BlogPostTemplate = ({ data, location }) => {
 </a>
 <a href="https://www.facebook.com/sharer/sharer.php?u=<URL>" class="share-btn facebook">
     Facebook
-</a></div>
-
+</a></div></div>
+<div className="photo_margin">
 <GatsbyImage
           image={getImage(data.file)}
           key={data.file.name}
@@ -74,12 +74,13 @@ const BlogPostTemplate = ({ data, location }) => {
             boxShadow: ' 1px 1px 1px 2px rgba(0, 0, 0, 0.05)',
           }}
         />
-
+</div></div>
         </header>
-        <section
+        <div className="article"><section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-        />
+         
+        /></div>
         <hr />
         <footer>
           <Bio />

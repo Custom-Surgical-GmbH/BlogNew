@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
 
-const Item = styled(Paper)(({ theme }) => ({
+const Cat = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -20,7 +20,7 @@ export default function FullWidthGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={4} className='box'>
         <Grid item  >
-        <Link to="/first"> <Item>Gatsby<StaticImage
+        <Link to="/news"> <Cat>News<StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
@@ -29,10 +29,10 @@ export default function FullWidthGrid() {
         height={50}
         quality={95}
         alt="Profile picture"
-      /></Item></Link> 
+      /></Cat></Link> 
         </Grid>
         <Grid item >
-          <Item><StaticImage
+        <Link to="/education">   <Cat>Education<StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
@@ -41,10 +41,10 @@ export default function FullWidthGrid() {
         height={50}
         quality={95}
         alt="Profile picture"
-      /></Item>
+      /></Cat></Link>
         </Grid>
         <Grid item >
-          <Item><StaticImage
+        <Link to="/software">  <Cat>Software<StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
@@ -53,10 +53,10 @@ export default function FullWidthGrid() {
         height={50}
         quality={95}
         alt="Profile picture"
-      /></Item>
+      /></Cat></Link>
         </Grid>
         <Grid item >
-          <Item><StaticImage
+        <Link to="/medtech">  <Cat>Medtech<StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
@@ -65,7 +65,19 @@ export default function FullWidthGrid() {
         height={50}
         quality={95}
         alt="Profile picture"
-      /></Item>
+      /></Cat></Link>
+        </Grid>
+        <Grid item >
+        <Link to="/articles">  <Cat>Articles<StaticImage
+        className="bio-avatar"
+        layout="fixed"
+        formats={["auto", "webp", "avif"]}
+        src="../images/logo.png"
+        width={50}
+        height={50}
+        quality={95}
+        alt="Profile picture"
+      /></Cat></Link>
         </Grid>
       </Grid>
     </Box></div>
