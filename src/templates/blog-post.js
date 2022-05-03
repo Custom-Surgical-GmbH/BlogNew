@@ -83,7 +83,7 @@ const BlogPostTemplate = ({ data, location }) => {
             </div>
             <div className="photo_margin">
               <GatsbyImage
-                image={getImage(data.file)}
+                image={getImage(post.frontmatter.image)}
                 key=" "
                 imgStyle={{
                   borderRadius: "5px",
@@ -144,24 +144,10 @@ export const pageQuery = graphql`
     $id: String!
     $previousPostId: String
     $nextPostId: String
-    $image: String
-    $views: String
   ) {
     site {
       siteMetadata {
         title
-      }
-    }
-
-    file(sourceInstanceName: { eq: "images" }, name: { eq: $image }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-      name
-    }
-    views: markdownRemark(id: { eq: $views }) {
-      frontmatter {
-        views
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -173,6 +159,12 @@ export const pageQuery = graphql`
         date(formatString: "MM/DD/YYYY")
         description
         tags
+        views
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       html
     }
