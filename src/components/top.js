@@ -18,25 +18,24 @@ const Top = ({ data1 }) => {
         }
       }
 
-      allMarkdownRemark(sort: { fields: [frontmatter___views], order: DESC}) {
+      allMarkdownRemark(sort: { fields: [frontmatter___views], order: DESC }) {
         nodes {
           excerpt
           fields {
             slug
-          } timeToRead
+          }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             description
             views
-            featuredImage
             image {
               childImageSharp {
                 gatsbyImageData
               }
             }
             tags
-           
           }
         }
       }

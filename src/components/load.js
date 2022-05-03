@@ -4,20 +4,18 @@ import Article from "../components/article"
 
 const Page = () => {
   const data = useStaticQuery(graphql`
-  {
-    allMarkdownRemark {
-      nodes {
-        frontmatter {
-          date
-          description
-          featuredImage
-          tags
-          title
+    {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            date
+            description
+            tags
+            title
+          }
         }
       }
     }
-  }
-  
   `)
   // Array of all news articles
   const allNews = data.allMarkdownRemark.nodes
@@ -59,7 +57,7 @@ const Page = () => {
     <div>
       <h1>Load more demo</h1>
       <div>
-        {list.map((article) => (
+        {list.map(article => (
           <Article key={article.id} article={article} />
         ))}
       </div>

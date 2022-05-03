@@ -1,28 +1,28 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const crypto = require("crypto");
-const { google } = require("googleapis");
+const crypto = require("crypto")
+const { google } = require("googleapis")
 
-require("dotenv").config();
+require("dotenv").config()
 
 exports.sourceNodes = async ({ actions }) => {
-  const { createNode } = actions;
+  const { createNode } = actions
 
   // google auth logic
-  const scopes = "https://www.googleapis.com/auth/analytics.readonly";
+  const scopes = "https://www.googleapis.com/auth/analytics.readonly"
   const jwt = new google.auth.JWT(
     process.env.CLIENT_EMAIL,
     null,
     process.env.PRIVATE_KEY,
     scopes
-  );
-  await jwt.authorize();
+  )
+  await jwt.authorize()
 
   const analyticsReporting = google.analyticsreporting({
     version: "v4",
     auth: jwt,
-  });
+  })
 
   // Analytics Reporting v4 query
   const result = await analyticsReporting.reports.batchGet({
@@ -55,13 +55,13 @@ exports.sourceNodes = async ({ actions }) => {
         },
       ],
     },
-  });
+  })
 
   // Add analytics data to graphql
-  const { rows } = result.data.reports[0].data;
+  const { rows } = result.data.reports[0].data
   for (const { dimensions, metrics } of rows) {
-    const path = dimensions[0];
-    const totalCount = metrics[0].values[0];
+    const path = dimensions[0]
+    const totalCount = metrics[0].values[0]
     createNode({
       path,
       totalCount: Number(totalCount),
@@ -75,11 +75,9 @@ exports.sourceNodes = async ({ actions }) => {
         mediaType: `text/plain`,
         description: `Page views per path`,
       },
-    });
+    })
   }
-};
-
-
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -101,7 +99,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              featuredImage
+              views
             }
           }
         }
@@ -127,7 +125,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-      const image = post.frontmatter.featuredImage
       const views = post.frontmatter.views
 
       createPage({
@@ -137,8 +134,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
-          image,
-          views
+          views,
         },
       })
     })
