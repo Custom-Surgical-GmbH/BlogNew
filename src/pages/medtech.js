@@ -1,9 +1,9 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Item from "../components/category"
 import Bio from "../components/bio"
 /*import Blocks from "../components/blocks"*/
@@ -12,12 +12,23 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { StaticImage } from "gatsby-plugin-image"
-
+import logo from '/src/images/logo.png';
+import Button from '@mui/material/Button';
 
 const BlogIndex =  ({data,  location }) => {
 
-  console.log(data)
+  const [items, setItems] = useState([]);
+  const [visible, setVisible] = useState(3);
+  const showMoreItems = () => {
+      setVisible((prevValue) =>prevValue + 3);
+  }
   
+
+  console.log(data)
+  let header
+  header = (
+    <img style={{width: "50px"}} src={logo} alt="Logo" />
+  )
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -40,15 +51,18 @@ const BlogIndex =  ({data,  location }) => {
    
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
-      <Item />
+      <div className="header_logo">
+       <Link className="header-link-home" to="/">
+     <header className="global-header">{header}</header> </Link></div>
+     <h1>Medtech</h1>
+      <p>Description of what we talk about in this category</p>
       <hr className="line"></hr>
   
       <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item  >
         <ol style={{ listStyle: `none` }} className="news_block">
-        {posts.map(post => {
+        {posts.slice(0, visible).map(post => {
           const title = post.frontmatter.title || post.fields.slug
           
 
@@ -60,13 +74,17 @@ const BlogIndex =  ({data,  location }) => {
               itemType="http://schema.org/Article"
             >
               <header>
-              <StaticImage
-        className="bio-avatar"
-      
-        src="../images/us.jpg"
-        quality={100}
-        alt="Profile picture"
-      />
+              <GatsbyImage
+            image={getImage(post.frontmatter.image)}
+            key=""
+            imgStyle={{
+              borderRadius: "5px",
+            }}
+            style={{
+              borderRadius: "5px",
+              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+            }}
+          />
       <small>{post.frontmatter.date}</small>
                 <h2>
                   <Link to={post.fields.slug} itemProp="url">
@@ -100,7 +118,7 @@ const BlogIndex =  ({data,  location }) => {
         </Grid></Grid></Box>
       
       
-      
+        <Button variant="contained" onClick={showMoreItems}>Load more</Button>
      
   
  
@@ -133,6 +151,10 @@ export const pageQuery = graphql`
               title
               description
               tags
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }}
             }
           }
         }

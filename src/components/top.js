@@ -18,12 +18,12 @@ const Top = ({ data1 }) => {
         }
       }
 
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark(sort: { fields: [frontmatter___views], order: DESC }) {
         nodes {
           excerpt
           fields {
             slug
-          }
+          } timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
@@ -35,6 +35,7 @@ const Top = ({ data1 }) => {
               }
             }
             tags
+           
           }
         }
       }

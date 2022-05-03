@@ -9,16 +9,14 @@ const Layout = ({ location, title, children }) => {
   let header
 
   if (isRootPath) {
-    header = (
-      <img style={{width: "50px"}} src={logo} alt="Logo" />
-    )
+   
   } else {
     
   }
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+       
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

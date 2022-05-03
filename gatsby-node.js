@@ -128,6 +128,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
       const image = post.frontmatter.featuredImage
+      const views = post.frontmatter.views
 
       createPage({
         path: post.fields.slug,
@@ -137,6 +138,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
           image,
+          views
         },
       })
     })

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
@@ -8,16 +8,31 @@ import Cat from "../components/category"
 import Bio from "../components/bio"
 import Top from "../components/top"
 /*import Blocks from "../components/blocks"*/
-import { styled } from "@mui/material/styles"
-import Box from "@mui/material/Box"
-import Paper from "@mui/material/Paper"
-import Grid from "@mui/material/Grid"
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import logo from '/src/images/logo.png';
 
-const BlogIndex = ({ data, location }) => {
+
+
+const BlogIndex =  ({data,  location }) => {
+
+  
+const [items, setItems] = useState([]);
+const [visible, setVisible] = useState(3);
+const showMoreItems = () => {
+    setVisible((prevValue) =>prevValue + 3);
+}
+ 
   console.log(data)
-
+  let header
+  header = (
+    <img style={{width: "50px"}} src={logo} alt="Logo" />
+  )
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -25,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-
+       
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -34,91 +49,119 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
+  
 
   return (
+   
     <Layout location={location} title={siteTitle}>
+      <div className="header_logo">
+       <Link className="header-link-home" to="/">
+     <header className="global-header">{header}</header> </Link></div>
       <Seo title="All posts" />
       <Bio />
-      <Cat />
-      <hr className="line"></hr>
-      <Top data={data} />
-
+      <Cat /><hr className="line"></hr>
+      <Top />
+      
+  
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
-          <Grid item>
-            <ol style={{ listStyle: `none` }} className="news_block">
-              {posts.map(post => {
-                const title = post.frontmatter.title || post.fields.slug
-                const featuredImgFluid = post.frontmatter.featuredImage
+      <Grid container spacing={{xs: 2, md: 3}} >
+        <Grid item  >
+       <ol style={{ listStyle: `none` }} className="news_block">
+       {posts.slice(0, visible).map(post => {
+          const title = post.frontmatter.title || post.fields.slug 
+          const featuredImgFluid = post.frontmatter.featuredImage
 
-                return (
-                  <li key={post.fields.slug} className="list">
-                    <article
-                      className="post-list-item"
-                      itemScope
-                      itemType="http://schema.org/Article"
-                    >
-                      <header>
-                        <GatsbyImage
-                          image={getImage(data.file)}
-                          key={data.file.name}
-                        />
-                        <small>{post.frontmatter.date}</small>
-                        <h2>
-                          <Link to={post.fields.slug} itemProp="url">
-                            <span itemProp="headline">{title}</span>
-                          </Link>
-                        </h2>
+          return (
+          <li key={post.fields.slug} className="list">
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                <GatsbyImage
+          image={getImage(post.frontmatter.image)}
+          key=""
+          imgStyle={{
+            borderRadius: '5px',
+          }}
+          style={{
+            borderRadius: '5px',
+            boxShadow: ' 1px 1px 1px 2px rgba(0, 0, 0, 0.05)',
+          }}
+        />
+        
+        <small>{post.frontmatter.date}</small>
+                  <h2>
+                    <Link to={post.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  
+                  <div>  
+          
+     <div >
+    {post.frontmatter.tags.map((tag, i) => [
+  <strong key={i}>
+    {tag}
+    {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
+  </strong>
+])}</div></div>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </ol>
+        </Grid></Grid></Box>
+      
+        <Button variant="contained" onClick={showMoreItems}>Load more</Button>
+      
+        
+  
+ 
 
-                        <div>
-                          <div>
-                            {post.frontmatter.tags.map((tag, i) => [
-                              <strong key={i}>
-                                {tag}
-                                {i < post.frontmatter.tags.length - 1
-                                  ? ", "
-                                  : ""}
-                              </strong>,
-                            ])}
-                          </div>
-                        </div>
-                      </header>
-                      <section>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              post.frontmatter.description || post.excerpt,
-                          }}
-                          itemProp="description"
-                        />
-                      </section>
-                    </article>
-                  </li>
-                )
-              })}
-            </ol>
-          </Grid>
-        </Grid>
-      </Box>
     </Layout>
   )
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query ($image: String) {
+  query {
     site {
       siteMetadata {
         title
       }
     }
-    file(sourceInstanceName: { eq: "images" }, name: { eq: $image }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-      name
-    }
+    
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
@@ -130,9 +173,16 @@ export const pageQuery = graphql`
           title
           description
           featuredImage
+          
           tags
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }
   }
 `
+

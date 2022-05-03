@@ -1,10 +1,11 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+date: "16-08-2013"
 description: "Hello World"
 tags: ["Medtech", "Software"]
-featuredImage: us
+featuredImage: profile-pic
 image: "./salty_egg.jpg"
+views: "300"
 ---
 
 This is my first post on my new fake blog! How exciting!

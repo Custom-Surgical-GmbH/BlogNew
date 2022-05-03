@@ -9,6 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Button from '@mui/material/Button';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Item from "../components/category"
 
@@ -30,6 +31,11 @@ const Bio = (post) => {
             description
             tags
             featuredImage
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
       }
@@ -46,14 +52,18 @@ const Bio = (post) => {
     <div className="bio">
        
      
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/us.jpg"
-        quality={100}
-        alt="Profile picture"
-      />
+       <GatsbyImage
+            image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
+            key=""
+            imgStyle={{
+              borderRadius: "5px",
+            }}
+            style={{
+              borderRadius: "5px",
+              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+            }}
+          />
+
        
      <div className="bio_text_flex">  <div style={{color: "white"}}>
     {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [

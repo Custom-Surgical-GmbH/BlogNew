@@ -257,9 +257,7 @@ a:focus {
   margin-bottom: var(--spacing-20);
 }
 
-.global-header {
-  background-color: #202026;
-}
+
 
 .main-heading {
   font-size: var(--fontSize-7);
@@ -335,15 +333,13 @@ a:focus {
   display: flex;
   flex-flow: column wrap;
   flex-direction: row;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
 }
 
 /*  Меняем порядок элементов, делая как бы строчную расстановку */
 .list:nth-child(1n+1) {
   order: 2;
-  width: 48%;
+  width: 30%;
   margin: 1%;
   border-radius: 5px;
 }
@@ -365,9 +361,7 @@ a:focus {
 }
 
 .global-header{
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  
   padding: 40px 50px;
 }
 
@@ -555,7 +549,7 @@ a{
 }
 
 .bio_text_flex{
-  width: 40%;
+  width: 100%;
   margin-left: 5%;
 }
 
@@ -583,6 +577,15 @@ a{
 
 .photo_margin{
   margin-bottom: 10%;
+  width: 50%;
+}
+
+.header_logo{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #202026;
 }
 /* Media queries */
 

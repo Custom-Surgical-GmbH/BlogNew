@@ -21,8 +21,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const url = typeof window !== 'undefined' ? window.location.href : '';
+
   console.log(data)
-  let featuredImgFluid = post.frontmatter.featuredImage
 
  
 
@@ -65,7 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
 <div className="photo_margin">
 <GatsbyImage
           image={getImage(data.file)}
-          key={data.file.name}
+          key=" "
           imgStyle={{
             borderRadius: '5px',
           }}
@@ -130,13 +130,16 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
     $image: String
-  
-  ) {
+    $views: String
+
+  ) { 
+    
     site {
       siteMetadata {
         title
       }
     }
+   
     file(
       sourceInstanceName: { eq: "images" }
       name: { eq: $image }
@@ -145,6 +148,11 @@ export const pageQuery = graphql`
         gatsbyImageData
       }
       name
+    }
+    views: markdownRemark(id: {eq: $views}) {
+      frontmatter {
+        views
+      }
     }
     markdownRemark(id: { eq: $id }) {
       id
@@ -160,6 +168,7 @@ export const pageQuery = graphql`
       }
       html
     }
+    
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
         slug

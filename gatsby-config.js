@@ -189,7 +189,38 @@ module.exports = {
       endDate: `today`,
       pageSize: 10000
     }
-  }
+  },
+    {
+      resolve: `gatsby-plugin-paginate`,
+      options: {
+        sources: [
+          {
+            path: `/page`,
+            pageSize: 5,
+            template: `${__dirname}/src/templates/page.js`,
+            serialize: (results) => results.allMarkdownRemark.edges,
+            query: `{
+              allMarkdownRemark {
+                edges {
+                  node {
+                    excerpt(pruneLength: 250)
+                    html
+                    id
+                    timeToRead
+                    frontmatter {
+                      date
+                      path
+                      tags
+                      title
+                    }
+                  }
+                }
+              }
+            }`
+          }
+        ]
+      }
+    }
     
 
 

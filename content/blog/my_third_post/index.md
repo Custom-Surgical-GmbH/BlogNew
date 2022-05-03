@@ -1,10 +1,11 @@
 ---
 title: Third
-date: "2018-05-01T22:12:03.284Z"
+date: "16-08-2015"
 description: "Hello World"
 tags: ["News", "Education"]
-featuredImage: profile-pic
+featuredImage: logo
 image: "./profile-pic.png"
+views: "1300"
 ---
 
 This is my first post on my new fake blog! How exciting!
