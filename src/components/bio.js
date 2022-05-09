@@ -31,7 +31,6 @@ const Bio = post => {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             description
             tags
@@ -46,18 +45,6 @@ const Bio = post => {
     }
   `)
 
-const tagstyle = {
-  color: "#FFA100",
-  padding: "5px",
-  padding: "5px 35px",
-  width: "max-content",
-  background: "#FFA10033",
-  borderRadius: "5px",
-  textAlign: "center",
-  fontSize: "16px",
-  marginBottom: "15%",
-  textTransform: "uppercase"
-};
   console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   /* const author = data.site.siteMetadata?.author
@@ -74,15 +61,28 @@ const tagstyle = {
         style={{
           borderRadius: "5px",
           boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-          width: "100%"
+          width: "100%",
         }}
       />
 
-      <div className="bio_text_flex"> 
+      <div className="bio_text_flex">
         {" "}
         <div>
           {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
-            <div key={i} style = {tagstyle}>
+            <div
+              key={i}
+              className={
+                tag === "News"
+                  ? "tags-news"
+                  : tag === "Medicine"
+                  ? "tags-medicine"
+                  : tag === "Technology"
+                  ? "tags-technology"
+                  : tag === "Education"
+                  ? "tags-education"
+                  : "tags-news"
+              }
+            >
               {tag}
               {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
                 ? ", "
@@ -99,7 +99,7 @@ const tagstyle = {
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
-        <Button variant="contained" style={{background: "#FFA100"}}>
+        <Button variant="contained" style={{ background: "#FFA100" }}>
           <Link
             to={data.allMarkdownRemark.nodes[0].fields.slug}
             style={{ color: "white" }}

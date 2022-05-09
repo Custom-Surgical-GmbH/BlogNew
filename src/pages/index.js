@@ -18,24 +18,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
 
 const BlogIndex = ({ data, location }) => {
-  console.log(data)
-
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const showMoreItems = () => {
     setVisible(prevValue => prevValue + 3)
   }
-  const tagsstyled = {
-    color: "#FFA100",
-  padding: "5px",
-  padding: "5px 35px",
-  width: "max-content",
-  background: "#FFA10033",
-  borderRadius: "5px",
-  textAlign: "center",
-  fontSize: "16px",
-  textTransform: "uppercase"
-  };
+
   console.log(data)
   let header
   header = <img style={{ width: "50px" }} src={logo} alt="Logo" />
@@ -65,13 +53,16 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <Seo title="All posts" />
       <Bio />
-      <div className="viewed"><div>Most viewed</div>
-      <hr className="line"></hr></div>
+      <div className="viewed">
+        <div>Most viewed</div>
+        <hr className="line"></hr>
+      </div>
       <Top />
       <Cat />
-      <div className="viewed"><div>Recent Articles</div>
-      <hr style={{margin: 0}}></hr></div>
-     
+      <div className="viewed">
+        <div>Recent Articles</div>
+        <hr style={{ margin: 0 }}></hr>
+      </div>
 
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }}>
@@ -100,30 +91,45 @@ const BlogIndex = ({ data, location }) => {
                           }}
                         />
                         <div className="photo_text_flex">
-           
-           <div className="tags_photo" style={{ color: "black" }}>
-             {data.allMarkdownRemark.nodes[0].frontmatter.tags.map(
-               (tag, i) => [
-                 <div key={i} style={tagsstyled}>
-                   {tag}
-                   {i <
-                   data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
-                     ? ", "
-                     : ""}
-                 </div>,
-               ]
-             )}
-           </div>{" "} <div className="timer">
-             <StaticImage
-               layout="fixed"
-               formats={["auto", "webp", "avif"]}
-               src="../images/timer.png"
-               quality={100}
-               alt="Profile picture"
-             />
-             <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[0].timeToRead} mins</div>
-           </div>
-         </div>
+                          <div
+                            className="tags_photo"
+                            style={{ color: "black" }}
+                          >
+                            {post.frontmatter.tags.map((tag, i) => [
+                              <div
+                                key={i}
+                                className={
+                                  tag === "News"
+                                    ? "tags-news"
+                                    : tag === "Medicine"
+                                    ? "tags-medicine"
+                                    : tag === "Technology"
+                                    ? "tags-technology"
+                                    : tag === "Education"
+                                    ? "tags-education"
+                                    : "tags-news"
+                                }
+                              >
+                                {tag}
+                                {i < post.frontmatter.tags.length - 1
+                                  ? ", "
+                                  : ""}
+                              </div>,
+                            ])}
+                          </div>{" "}
+                          <div className="timer">
+                            <StaticImage
+                              layout="fixed"
+                              formats={["auto", "webp", "avif"]}
+                              src="../images/timer.png"
+                              quality={100}
+                              alt="Profile picture"
+                            />
+                            <div className="timeread">
+                              &#160;{post.timeToRead} mins
+                            </div>
+                          </div>
+                        </div>
 
                         <h2>
                           <Link to={post.fields.slug} itemProp="url">
@@ -131,9 +137,7 @@ const BlogIndex = ({ data, location }) => {
                           </Link>
                         </h2>
 
-                        <div>
-                          
-                        </div>
+                        <div></div>
                       </header>
                       <section>
                         <p
@@ -178,7 +182,6 @@ export const pageQuery = graphql`
         }
         timeToRead
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
           description
           views

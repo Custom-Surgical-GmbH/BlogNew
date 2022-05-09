@@ -423,16 +423,79 @@ footer{
   margin-bottom: 5%;
 }
 
-[itemid="grid_category"]{
+/* [itemid="grid_category-news"]{
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #8F4FFF;
+  background-color: #ffffff;
   font-size: 18px;
-  color: white;
+  color: #FFA100;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+[itemid="grid_category-news"]:hover{
+  background-color: #FFA10033;
+  transition: 0.3s all;
 }
 
-[itemid="grid_category"]:hover{
-  background-color: #FFA100;
+/* [itemid="grid_category-education"]{
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #ffffff;
+  font-size: 18px;
+  color: #8F4FFF;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+[itemid="grid_category-education"]:hover{
+  background-color: #8F4FFF33;
+  transition: 0.3s all;
+}
+
+/* [itemid="grid_category-medicine"]{
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #ffffff;
+  font-size: 18px;
+  color: #FFA100;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+[itemid="grid_category-medicine"]:hover{
+  background-color: #FFA10033;
+  transition: 0.3s all;
+}
+
+/* [itemid="grid_category-technology"]{
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #ffffff;
+  font-size: 18px;
+  color: #00C5B7;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+[itemid="grid_category-technology"]:hover{
+  background-color: #00C5B733;
   transition: 0.3s all;
 }
 
@@ -458,6 +521,53 @@ footer{
 .tags{
   display: flex;
   width: 20%;
+}
+
+.tags-news{
+  color: #FFA100;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  background: #FFA10033;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.tags-education{
+  color: #8F4FFF;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  background: #8F4FFF33;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.tags-medicine{
+  color: #FFA100;
+  padding: 5px;
+  padding: 5px 35px;
+  width: max-content;
+  background: #FFA10033;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.tags-technology{
+  color: #00C5B7;
+  padding: 5px 35px;
+  width: max-content;
+  background: #00C5B733;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .share-btn {
