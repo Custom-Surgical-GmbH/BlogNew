@@ -2,7 +2,7 @@
 title: Third
 date: 2012-06-06
 description: "Hello World"
-tags: ["News", "Education"]
+tags: ["News"]
 image: "./salty_egg.jpg"
 views: 1200
 ---

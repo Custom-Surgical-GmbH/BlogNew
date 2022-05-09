@@ -14,6 +14,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Item from "../components/category"
 
 import logo from "/src/images/logo.png"
+import { CenterFocusStrong } from "@mui/icons-material"
+import { textAlign } from "@mui/system"
 
 const Bio = post => {
   const data = useStaticQuery(graphql`
@@ -44,6 +46,18 @@ const Bio = post => {
     }
   `)
 
+const tagstyle = {
+  color: "#FFA100",
+  padding: "5px",
+  padding: "5px 35px",
+  width: "max-content",
+  background: "#FFA10033",
+  borderRadius: "5px",
+  textAlign: "center",
+  fontSize: "16px",
+  marginBottom: "15%",
+  textTransform: "uppercase"
+};
   console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   /* const author = data.site.siteMetadata?.author
@@ -60,19 +74,20 @@ const Bio = post => {
         style={{
           borderRadius: "5px",
           boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+          width: "100%"
         }}
       />
 
-      <div className="bio_text_flex">
+      <div className="bio_text_flex"> 
         {" "}
-        <div style={{ color: "white" }}>
+        <div>
           {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
-            <strong key={i}>
+            <div key={i} style = {tagstyle}>
               {tag}
               {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
                 ? ", "
                 : ""}
-            </strong>,
+            </div>,
           ])}
         </div>
         <div className="article_h2">
@@ -84,13 +99,13 @@ const Bio = post => {
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
-        <Button variant="contained">
+        <Button variant="contained" style={{background: "#FFA100"}}>
           <Link
             to={data.allMarkdownRemark.nodes[0].fields.slug}
             style={{ color: "white" }}
             itemProp="url"
           >
-            Outlined
+            Read Article &#10140;
           </Link>
         </Button>
       </div>

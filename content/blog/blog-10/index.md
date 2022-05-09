@@ -2,7 +2,7 @@
 title: New Beginnings
 date: 2018-08-06
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
-tags: [" "]
+tags: ["Education"]
 image: "./cute-dog.jpg"
 views: 1000
 ---

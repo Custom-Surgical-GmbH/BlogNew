@@ -75,10 +75,11 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: 'Red Hat Display', sans-serif;
   font-size: var(--fontSize-1);
   color: var(--color-text);
 }
@@ -101,7 +102,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 700;
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
@@ -240,10 +242,7 @@ a {
   color: var(--color-primary);
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
+
 
 /* Custom classes */
 
@@ -295,11 +294,11 @@ a:focus {
   display: flex;
   margin-bottom: var(--spacing-16);
   background-color: #202026;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
 }
 
 .bio p {
-  margin-bottom: var(--spacing-5);
+  margin-bottom: 10%;
 
 }
 
@@ -325,7 +324,6 @@ a:focus {
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }
-
 
 
 /*  Рендерим элементы как колонки */
@@ -376,10 +374,13 @@ footer{
   margin-right: auto;
 }
 
-
-
 .tags{
   display: flex;
+}
+
+.timeread{
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .tags p:nth-child(1){
@@ -391,27 +392,53 @@ footer{
 }
 
 .article_button{
- background-color:  #C4C4C4;
- padding: 15px 45px;
- margin-top: 5%;
+  background-color:  #C4C4C4;
+  padding: 15px 45px;
+  margin-top: 5%;
+}
+
+.viewed{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .category{
-  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  margin-bottom: 2%;
-
+  width: 70%;
+  margin-bottom: 10%;
+  text-align: center;
 }
 
 .category_text{
-  margin-right: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
+.select_category{
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+[itemid="grid_category"]{
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #8F4FFF;
+  font-size: 18px;
+  color: white;
+}
+
+[itemid="grid_category"]:hover{
+  background-color: #FFA100;
+  transition: 0.3s all;
+}
 
 .box{
   margin-top: 0;
+  justify-content: space-between;
 }
 
 .line{
@@ -431,7 +458,6 @@ footer{
 .tags{
   display: flex;
   width: 20%;
-  
 }
 
 .share-btn {
@@ -460,12 +486,12 @@ footer{
 .share-btn.linkedin    { background: #4875B4; }
 
 .flex_post{
-display: flex;
-width: 90%;
-margin-left: auto;
-margin-right: auto;
-justify-content: space-around;
-margin-top: 5%;
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  margin-top: 5%;
 }
 
 .article{
@@ -482,18 +508,18 @@ margin-top: 5%;
 
 .text_on_photo{
   width: 100%;
-    height: 100%;
-    position: relative;
+  height: 100%;
+  position: relative;
  
 }
 
 .over_photo{
   width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
 }
 
 .gatsby-image-wrapper .bio-avatar{
@@ -525,18 +551,16 @@ margin-top: 5%;
 }
 
 .bio{
-  padding-top:5%;
-  padding-left: 5%;
-    padding-right: 5%;
+  padding-top: 2%;
+  padding-right: 5%;
 }
 
 
 .photo_text_flex{
   margin-top: 2%;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-
 
 
 .tags_photo{
@@ -556,10 +580,9 @@ a{
 .top{
   display: flex;
   margin-left: auto;
-    margin-right: auto;
-    padding-top:5%;
-    padding-left: 5%;
-      padding-right: 5%;
+  margin-right: auto;
+  width: 90%;
+  margin-bottom: 7%;
 
 }
 
@@ -582,10 +605,10 @@ a{
 
 .header_logo{
   display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    background-color: #202026;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #202026;
 }
 /* Media queries */
 

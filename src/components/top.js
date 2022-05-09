@@ -42,6 +42,17 @@ const Top = ({ data1 }) => {
     }
   `)
 
+  const tagsstyled = {
+    color: "#FFA100",
+  padding: "5px",
+  padding: "5px 35px",
+  width: "max-content",
+  background: "#FFA10033",
+  borderRadius: "5px",
+  textAlign: "center",
+  fontSize: "16px",
+  textTransform: "uppercase"
+  };
   console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   /* const author = data.site.siteMetadata?.author
@@ -60,11 +71,25 @@ const Top = ({ data1 }) => {
             style={{
               borderRadius: "5px",
               boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+              height: "300px"
             }}
           />
 
           <div className="photo_text_flex">
-            <div className="timer">
+           
+            <div className="tags_photo" style={{ color: "black" }}>
+              {data.allMarkdownRemark.nodes[0].frontmatter.tags.map(
+                (tag, i) => [
+                  <div key={i} style={tagsstyled}>
+                    {tag}
+                    {i <
+                    data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
+                      ? ", "
+                      : ""}
+                  </div>,
+                ]
+              )}
+            </div>{" "} <div className="timer">
               <StaticImage
                 layout="fixed"
                 formats={["auto", "webp", "avif"]}
@@ -72,21 +97,8 @@ const Top = ({ data1 }) => {
                 quality={100}
                 alt="Profile picture"
               />
-              <div>&#160;{data.allMarkdownRemark.nodes[0].timeToRead} mins</div>
+              <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[0].timeToRead} mins</div>
             </div>
-            <div className="tags_photo" style={{ color: "black" }}>
-              {data.allMarkdownRemark.nodes[0].frontmatter.tags.map(
-                (tag, i) => [
-                  <strong key={i}>
-                    {tag}
-                    {i <
-                    data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
-                      ? ", "
-                      : ""}
-                  </strong>,
-                ]
-              )}
-            </div>{" "}
           </div>
           <div className="text_flex">
             <div className="article_h2">
@@ -117,10 +129,24 @@ const Top = ({ data1 }) => {
             style={{
               borderRadius: "5px",
               boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+              height: "300px"
             }}
           />
           <div className="photo_text_flex">
-            <div className="timer">
+           
+            <div className="tags_photo" style={{ color: "black" }}>
+              {data.allMarkdownRemark.nodes[1].frontmatter.tags.map(
+                (tag, i) => [
+                  <div key={i} style={tagsstyled}>
+                    {tag}
+                    {i <
+                    data.allMarkdownRemark.nodes[1].frontmatter.tags.length - 1
+                      ? ", "
+                      : ""}
+                  </div>,
+                ]
+              )}
+            </div>{" "} <div className="timer">
               <StaticImage
                 layout="fixed"
                 formats={["auto", "webp", "avif"]}
@@ -128,21 +154,8 @@ const Top = ({ data1 }) => {
                 quality={100}
                 alt="Profile picture"
               />
-              <div>&#160;{data.allMarkdownRemark.nodes[1].timeToRead} mins</div>
-            </div>
-            <div className="tags_photo" style={{ color: "black" }}>
-              {data.allMarkdownRemark.nodes[1].frontmatter.tags.map(
-                (tag, i) => [
-                  <strong key={i}>
-                    {tag}
-                    {i <
-                    data.allMarkdownRemark.nodes[1].frontmatter.tags.length - 1
-                      ? ", "
-                      : ""}
-                  </strong>,
-                ]
-              )}
-            </div>{" "}
+              
+            <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[1].timeToRead} mins</div></div>
           </div>
           <div className="text_flex">
             <div className="article_h2">

@@ -16,68 +16,20 @@ const Cat = styled(Paper)(({ theme }) => ({
 
 export default function FullWidthGrid() {
   return (
-    <div className='category'><h3 className='category_text'>Category</h3>
+    <div className='category'><h3 className='category_text'>Browse by Category</h3><h5 className="select_category">Select a Category to see more related content</h5>
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={4} className='box'>
+      <Grid container spacing={1} className='box'>
         <Grid item  >
-        <Link to="/news"> <Cat>News<StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/logo.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      /></Cat></Link> 
+        <Link to="/news"> <Cat itemID='grid_category'>NEWS</Cat></Link> 
         </Grid>
         <Grid item >
-        <Link to="/education">   <Cat>Education<StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/logo.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      /></Cat></Link>
+        <Link to="/education">   <Cat itemID='grid_category'>EDUCATION</Cat></Link>
         </Grid>
         <Grid item >
-        <Link to="/software">  <Cat>Software<StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/logo.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      /></Cat></Link>
+        <Link to="/technology">  <Cat itemID='grid_category'>TECHNOLOGY</Cat></Link>
         </Grid>
         <Grid item >
-        <Link to="/medtech">  <Cat>Medtech<StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/logo.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      /></Cat></Link>
-        </Grid>
-        <Grid item >
-        <Link to="/articles">  <Cat>Articles<StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/logo.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      /></Cat></Link>
+        <Link to="/medicine">  <Cat itemID='grid_category'>MEDICINE</Cat></Link>
         </Grid>
       </Grid>
     </Box></div>
