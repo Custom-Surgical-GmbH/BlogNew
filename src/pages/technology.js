@@ -15,20 +15,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import logo from '/src/images/logo.png';
 import Button from '@mui/material/Button';
 
-<<<<<<< Updated upstream
-
-const BlogIndex =  ({data,  location }) => {
-
-
-  const [items, setItems] = useState([]);
-  const [visible, setVisible] = useState(3);
-=======
 import sub from "/src/images/sub.png"
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
->>>>>>> Stashed changes
   const showMoreItems = () => {
       setVisible((prevValue) =>prevValue + 3);
   }
@@ -59,82 +50,6 @@ const BlogIndex = ({ data, location }) => {
   return (
    
     <Layout location={location} title={siteTitle}>
-<<<<<<< Updated upstream
-        <div className="header_logo">
-       <Link className="header-link-home" to="/">
-     <header className="global-header">{header}</header> </Link></div>
-      <Seo title="All posts" />
-      <h1>Software</h1>
-      <p>Description of what we talk about in this category</p>
-      <hr className="line"></hr>
-  
-      <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item  >
-        <ol style={{ listStyle: `none` }} className="news_block">
-        {posts.slice(0, visible).map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          
-
-          return (
-            <li key={post.fields.slug} className="list">
-            <article
-              className="post-list-item"
-              itemScope
-              itemType="http://schema.org/Article"
-            >
-              <header>
-              <GatsbyImage
-            image={getImage(post.frontmatter.image)}
-            key=""
-            imgStyle={{
-              borderRadius: "5px",
-            }}
-            style={{
-              borderRadius: "5px",
-              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-            }}
-          />
-      <small>{post.frontmatter.date}</small>
-                <h2>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
-                  </Link>
-                </h2>
-                
-                <div>  
-        
-   <div >
-  {post.frontmatter.tags.map((tag, i) => [
-<strong key={i}>
-  {tag}
-  {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
-</strong>
-])}</div></div>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: post.frontmatter.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
-              </section>
-            </article>
-          </li>
-          )
-        })}
-      </ol>
-        </Grid></Grid></Box>
-      
-      
-      
-        <Button variant="contained" onClick={showMoreItems}>Load more</Button>
-  
- 
-
-    </Layout>
-=======
     <div className="header_logo">
       <Link className="header-link-home" to="/">
         <header className="global-header">{header}</header>{" "}
@@ -259,7 +174,6 @@ const BlogIndex = ({ data, location }) => {
       <div>Custom Surgical</div></div>
     </footer>
   </Layout>
->>>>>>> Stashed changes
   )
 }
 
@@ -273,26 +187,6 @@ export const pageQuery = graphql`
             title
           }
         }
-<<<<<<< Updated upstream
-        allMarkdownRemark(
-          sort: {fields: [frontmatter___date], order: DESC}
-          filter: {frontmatter: {tags: {eq: "Software"}}}
-        ) {
-          nodes {
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              description
-              tags
-              image {
-                childImageSharp {
-                  gatsbyImageData
-                }}
-=======
         timeToRead
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
@@ -302,7 +196,6 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               gatsbyImageData
->>>>>>> Stashed changes
             }
           }
         }

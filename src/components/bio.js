@@ -100,11 +100,7 @@ const tagstyle = {
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
-<<<<<<< Updated upstream
-        <Button variant="contained" style={{background: "#FFA100"}}>
-=======
         <Button variant="contained" style={{ background: "#FFA100" }} className = "read">
->>>>>>> Stashed changes
           <Link
             to={data.allMarkdownRemark.nodes[0].fields.slug}
             style={{ color: "white" }}

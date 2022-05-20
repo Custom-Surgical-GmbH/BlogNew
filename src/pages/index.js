@@ -26,19 +26,6 @@ const BlogIndex = ({ data, location }) => {
   const showMoreItems = () => {
     setVisible(prevValue => prevValue + 3)
   }
-<<<<<<< Updated upstream
-  const tagsstyled = {
-    color: "#FFA100",
-  padding: "5px",
-  padding: "5px 35px",
-  width: "max-content",
-  background: "#FFA10033",
-  borderRadius: "5px",
-  textAlign: "center",
-  fontSize: "16px",
-  textTransform: "uppercase"
-  };
-=======
 
 
   const emailValidation = async (email) => {
@@ -96,7 +83,6 @@ const BlogIndex = ({ data, location }) => {
 
   
   
->>>>>>> Stashed changes
   console.log(data)
   let header
   header = <img style={{ width: "50px" }} src={logo} alt="Logo" />

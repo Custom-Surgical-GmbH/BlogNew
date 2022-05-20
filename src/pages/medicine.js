@@ -14,17 +14,11 @@ import Grid from '@mui/material/Grid';
 import { StaticImage } from "gatsby-plugin-image"
 import logo from '/src/images/logo.png';
 import Button from '@mui/material/Button';
-<<<<<<< Updated upstream
-
-const BlogIndex =  ({data,  location }) => {
-
-=======
 import sub from "/src/images/sub.png"
 
 const BlogIndex =  ({data,  location }) => {
 
 
->>>>>>> Stashed changes
   const [items, setItems] = useState([]);
   const [visible, setVisible] = useState(3);
   const showMoreItems = () => {
@@ -33,14 +27,7 @@ const BlogIndex =  ({data,  location }) => {
   
 
   console.log(data)
-<<<<<<< Updated upstream
-  let header
-  header = (
-    <img style={{width: "50px"}} src={logo} alt="Logo" />
-  )
-=======
   
->>>>>>> Stashed changes
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   let header
@@ -66,79 +53,6 @@ const BlogIndex =  ({data,  location }) => {
    
     <Layout location={location} title={siteTitle}>
       <div className="header_logo">
-<<<<<<< Updated upstream
-       <Link className="header-link-home" to="/">
-     <header className="global-header">{header}</header> </Link></div>
-     <h1>Medtech</h1>
-      <p>Description of what we talk about in this category</p>
-      <hr className="line"></hr>
-  
-      <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item  >
-        <ol style={{ listStyle: `none` }} className="news_block">
-        {posts.slice(0, visible).map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          
-
-          return (
-            <li key={post.fields.slug} className="list">
-            <article
-              className="post-list-item"
-              itemScope
-              itemType="http://schema.org/Article"
-            >
-              <header>
-              <GatsbyImage
-            image={getImage(post.frontmatter.image)}
-            key=""
-            imgStyle={{
-              borderRadius: "5px",
-            }}
-            style={{
-              borderRadius: "5px",
-              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-            }}
-          />
-      <small>{post.frontmatter.date}</small>
-                <h2>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
-                  </Link>
-                </h2>
-                
-                <div>  
-        
-   <div >
-  {post.frontmatter.tags.map((tag, i) => [
-<strong key={i}>
-  {tag}
-  {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
-</strong>
-])}</div></div>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: post.frontmatter.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
-              </section>
-            </article>
-          </li>
-          )
-        })}
-      </ol>
-        </Grid></Grid></Box>
-      
-      
-        <Button variant="contained" onClick={showMoreItems}>Load more</Button>
-     
-  
- 
-
-=======
         <Link className="header-link-home" to="/">
           <header className="global-header">{header}</header>{" "}
         </Link>
@@ -261,7 +175,6 @@ const BlogIndex =  ({data,  location }) => {
         <div className="bottom_footer"><hr></hr>
         <div>Custom Surgical</div></div>
       </footer>
->>>>>>> Stashed changes
     </Layout>
   )
 }
@@ -278,21 +191,14 @@ export const pageQuery = graphql`
         }
         allMarkdownRemark(
           sort: {fields: [frontmatter___date], order: DESC}
-<<<<<<< Updated upstream
-          filter: {frontmatter: {tags: {eq: "Medtech"}}}
-=======
           filter: {frontmatter: {tags: {eq: "Medicine"}}}
->>>>>>> Stashed changes
         ) {
           nodes {
             excerpt
             fields {
               slug
             }
-<<<<<<< Updated upstream
-=======
             timeToRead
->>>>>>> Stashed changes
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               title
