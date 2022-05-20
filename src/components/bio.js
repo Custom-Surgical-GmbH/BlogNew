@@ -7,15 +7,9 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import Button from "@mui/material/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Item from "../components/category"
-
-import logo from "/src/images/logo.png"
-import { CenterFocusStrong } from "@mui/icons-material"
-import { textAlign } from "@mui/system"
 
 const Bio = post => {
   const data = useStaticQuery(graphql`
@@ -65,7 +59,11 @@ const tagstyle = {
 
   return (
     <div className="bio">
-      <GatsbyImage
+       <Link
+                to={data.allMarkdownRemark.nodes[0].fields.slug}
+                itemProp="url"
+                style={{width: "100%"}}
+              ><GatsbyImage
         image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
         key=""
         imgStyle={{
@@ -76,7 +74,7 @@ const tagstyle = {
           boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
           width: "100%"
         }}
-      />
+      /></Link>
 
       <div className="bio_text_flex"> 
         {" "}
@@ -91,15 +89,22 @@ const tagstyle = {
           ])}
         </div>
         <div className="article_h2">
-          <h2 style={{ color: "white" }}>
+        <Link
+                to={data.allMarkdownRemark.nodes[0].fields.slug}
+                itemProp="url"
+              ><h2 style={{ color: "white" }}>
             {" "}
             {data.allMarkdownRemark.nodes[0].frontmatter.title}
-          </h2>
+          </h2></Link>
         </div>
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
+<<<<<<< Updated upstream
         <Button variant="contained" style={{background: "#FFA100"}}>
+=======
+        <Button variant="contained" style={{ background: "#FFA100" }} className = "read">
+>>>>>>> Stashed changes
           <Link
             to={data.allMarkdownRemark.nodes[0].fields.slug}
             style={{ color: "white" }}

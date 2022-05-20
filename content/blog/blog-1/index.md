@@ -68,4 +68,11 @@ In February, we were happy to welcome Marc Frigola to our team. Mark took over o
 In March, we launched our Andr
 In March, we launched our Android app for MicroREC. The app was aimed to improve the shooting experience in operating rooms. Regular photo apps don’t allow you to adjust focus from fingers or instruments on pupils and mix up medical imagery with personal files in a camera roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
 
-![alt text](images/cute-dog.jpg "Cute dog")
+<video width="320" height="240" autoplay muted style= "margin-left: auto; margin-right: auto; width: 100%">
+  <source src="./Cataract surgery with MicroREC.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<a href="https://www.google.com/search?q=cute+animals&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjYyIm7pOv3AhVZRvEDHQs9DZ0Q_AUoAXoECAEQAw&biw=1536&bih=696&dpr=1.25" target="t_blank">And here you write the text for the link</a>
+
+![alt text](./cute-dog.jpg "Cute dog")

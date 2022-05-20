@@ -10,9 +10,57 @@ const Cat = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
+<<<<<<< Updated upstream
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
+=======
+  textAlign: "center",
+}))
+
+const style = {
+  news: {
+    color: "#FFA100",
+    padding: "5px",
+    padding: "5px 35px",
+    width: "max-content",
+    borderRadius: "5px",
+    textAlign: "center",
+    fontSize: "16px",
+    textTransform: "uppercase",
+  },
+  education: {
+    color: "#8F4FFF",
+    padding: "5px",
+    padding: "5px 35px",
+    width: "max-content",
+    borderRadius: "5px",
+    textAlign: "center",
+    fontSize: "16px",
+    textTransform: "uppercase",
+  },
+  medicine: {
+    color: "#FFA100",
+    padding: "5px",
+    padding: "5px 35px",
+    width: "max-content",
+    borderRadius: "5px",
+    textAlign: "center",
+    fontSize: "16px",
+    textTransform: "uppercase",
+  },
+  technology: {
+    color: "#00C5B7",
+    padding: "5px",
+    padding: "5px 35px",
+    width: "max-content",
+    borderRadius: "5px",
+    textAlign: "center",
+    fontSize: "16px",
+    textTransform: "uppercase",
+  },
+}
+>>>>>>> Stashed changes
 
 export default function FullWidthGrid() {
   return (

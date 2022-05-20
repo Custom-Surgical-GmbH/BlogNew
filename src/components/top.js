@@ -2,12 +2,6 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Button from "@mui/material/Button"
-import Timer from "/src/images/timer.svg"
-import Grid from "@mui/material/Grid"
-import Icon from "@mui/material/Icon"
-import Item from "../components/category"
-import logo from "/src/images/logo.png"
 
 const Top = ({ data1 }) => {
   const data = useStaticQuery(graphql`
@@ -62,7 +56,10 @@ const Top = ({ data1 }) => {
     <div className="top">
       <div className="flex_blocks">
         <div>
-          <GatsbyImage
+        <Link
+                to={data.allMarkdownRemark.nodes[0].fields.slug}
+                itemProp="url"
+              > <GatsbyImage
             image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
             key=""
             imgStyle={{
@@ -73,14 +70,24 @@ const Top = ({ data1 }) => {
               boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
               height: "300px"
             }}
-          />
+          /></Link>
 
           <div className="photo_text_flex">
            
             <div className="tags_photo" style={{ color: "black" }}>
               {data.allMarkdownRemark.nodes[0].frontmatter.tags.map(
                 (tag, i) => [
-                  <div key={i} style={tagsstyled}>
+                  <div key={i} className={
+                    tag === "News"
+                      ? "tags-news"
+                      : tag === "Medicine"
+                      ? "tags-medicine"
+                      : tag === "Technology"
+                      ? "tags-technology"
+                      : tag === "Education"
+                      ? "tags-education"
+                      : "tags-news"
+                  }>
                     {tag}
                     {i <
                     data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
@@ -120,7 +127,10 @@ const Top = ({ data1 }) => {
 
       <div className="flex_blocks">
         <div>
-          <GatsbyImage
+        <Link
+                to={data.allMarkdownRemark.nodes[1].fields.slug}
+                itemProp="url"
+              > <GatsbyImage
             image={getImage(data.allMarkdownRemark.nodes[1].frontmatter.image)}
             key=""
             imgStyle={{
@@ -131,13 +141,23 @@ const Top = ({ data1 }) => {
               boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
               height: "300px"
             }}
-          />
+          /></Link>
           <div className="photo_text_flex">
            
             <div className="tags_photo" style={{ color: "black" }}>
               {data.allMarkdownRemark.nodes[1].frontmatter.tags.map(
                 (tag, i) => [
-                  <div key={i} style={tagsstyled}>
+                  <div key={i} className={
+                    tag === "News"
+                      ? "tags-news"
+                      : tag === "Medicine"
+                      ? "tags-medicine"
+                      : tag === "Technology"
+                      ? "tags-technology"
+                      : tag === "Education"
+                      ? "tags-education"
+                      : "tags-news"
+                  }>
                     {tag}
                     {i <
                     data.allMarkdownRemark.nodes[1].frontmatter.tags.length - 1
