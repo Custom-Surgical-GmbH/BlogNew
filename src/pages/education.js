@@ -1,29 +1,25 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Banner from "../components/banner"
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import SubscriptionBanner from "../components/banner"
+import Box from "@mui/material/Box"
+import Grid from "@mui/material/Grid"
 import { StaticImage } from "gatsby-plugin-image"
-import logo from '/src/images/logo.png';
+import logo from "/src/images/logo.png"
 
-
-const BlogIndex =  ({data,  location }) => {
-
-  const [items, setItems] = useState([]);
-const [visible, setVisible] = useState(3);
-const showMoreItems = () => {
-    setVisible((prevValue) =>prevValue + 3);
-}
+const BlogIndex = ({ data, location }) => {
+  const [items, setItems] = useState([])
+  const [visible, setVisible] = useState(3)
+  const showMoreItems = () => {
+    setVisible(prevValue => prevValue + 3)
+  }
 
   console.log(data)
   let header
-  header = (
-    <img style={{width: "50px"}} src={logo} alt="Logo" />
-  )
+  header = <img style={{ width: "50px" }} src={logo} alt="Logo" />
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -31,7 +27,7 @@ const showMoreItems = () => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-       
+
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -40,10 +36,8 @@ const showMoreItems = () => {
       </Layout>
     )
   }
-  
 
   return (
-   
     <Layout location={location} title={siteTitle}>
       <div className="header_logo">
         <Link className="header-link-home" to="/">
@@ -51,21 +45,28 @@ const showMoreItems = () => {
         </Link>
       </div>
       <Seo title="All posts" />
-      
-      <div className="viewed" style={{width: "90%"}}>
-        <div style={{
-          color: "#8F4FFF",
-          fontSize: "36px",
-          fontWeight: "700",
-          marginTop: "5%",
-          marginBottom: "0%"
 
-        }}>Education</div>
-        <div style={{
-          fontWeight: "500",
-          marginBottom: "1%",
-          fontSize: "20px",
-        }}>Description of what we talk about in this category</div>
+      <div className="viewed" style={{ width: "90%" }}>
+        <div
+          style={{
+            color: "#8F4FFF",
+            fontSize: "36px",
+            fontWeight: "700",
+            marginTop: "5%",
+            marginBottom: "0%",
+          }}
+        >
+          Education
+        </div>
+        <div
+          style={{
+            fontWeight: "500",
+            marginBottom: "1%",
+            fontSize: "20px",
+          }}
+        >
+          Description of what we talk about in this category
+        </div>
         <hr style={{ margin: 0 }}></hr>
       </div>
 
@@ -84,20 +85,22 @@ const showMoreItems = () => {
                       itemType="http://schema.org/Article"
                     >
                       <header>
-                      <Link to={post.fields.slug} itemProp="url" > <GatsbyImage
-                          image={getImage(post.frontmatter.image)}
-                          key=""
-                          imgStyle={{
-                            borderRadius: "5px",
-                          }}
-                          style={{
-                            borderRadius: "5px",
-                            boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-                            height: "270px"
-                          }}
-                        /></Link>
+                        <Link to={post.fields.slug} itemProp="url">
+                          {" "}
+                          <GatsbyImage
+                            image={getImage(post.frontmatter.image)}
+                            key=""
+                            imgStyle={{
+                              borderRadius: "5px",
+                            }}
+                            style={{
+                              borderRadius: "5px",
+                              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+                              height: "270px",
+                            }}
+                          />
+                        </Link>
                         <div className="text_flex_pages">
-                          
                           <div className="timer">
                             <StaticImage
                               layout="fixed"
@@ -113,7 +116,11 @@ const showMoreItems = () => {
                         </div>
 
                         <h2 className="h2_arc">
-                          <Link to={post.fields.slug} itemProp="url" className="link_edu">
+                          <Link
+                            to={post.fields.slug}
+                            itemProp="url"
+                            className="link_edu"
+                          >
                             {title}
                           </Link>
                         </h2>
@@ -137,31 +144,118 @@ const showMoreItems = () => {
           </Grid>
         </Grid>
       </Box>
-      <div style={{textAlign: "center"}}>
-      <button onClick={showMoreItems} className = "loadmore">
-        Load more
-      </button></div>
-      <Banner/>
-        <footer>
+      <div style={{ textAlign: "center" }}>
+        <button onClick={showMoreItems} className="loadmore">
+          Load more
+        </button>
+      </div>
+      <SubscriptionBanner path={"education-page"} tag={"Education"} />
+      <footer>
         <div className="footer_li">
-        <ul><div className="ul">About us</div>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/press/" target="_blank">Press</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/careers/" target="_blank">Careers</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/referral-program/" target="_blank">Referral Program</a></li>
-        </ul>
-        <ul><div className="ul">Support</div>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/faqs/" target="_blank">FAQs</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/manuals/" target="_blank">Manuals</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/contact/" target="_blank">Contact us</a></li>
-        </ul>
-        <ul><div className="ul">Legal</div>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/terms-conditions/" target="_blank">Terms</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/privacy-policy/" target="_blank">Privacy Policy</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/warranty/" target="_blank">Warranty</a></li>
-          <li className="li"><a className="link_li" href="https://customsurgical.co/shipping/" target="_blank">Shipping</a></li>
-        </ul></div>
-        <div className="bottom_footer"><hr></hr>
-        <div>Custom Surgical</div></div>
+          <ul>
+            <div className="ul">About us</div>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/press/"
+                target="_blank"
+              >
+                Press
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/careers/"
+                target="_blank"
+              >
+                Careers
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/referral-program/"
+                target="_blank"
+              >
+                Referral Program
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <div className="ul">Support</div>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/faqs/"
+                target="_blank"
+              >
+                FAQs
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/manuals/"
+                target="_blank"
+              >
+                Manuals
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/contact/"
+                target="_blank"
+              >
+                Contact us
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <div className="ul">Legal</div>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/terms-conditions/"
+                target="_blank"
+              >
+                Terms
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/privacy-policy/"
+                target="_blank"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/warranty/"
+                target="_blank"
+              >
+                Warranty
+              </a>
+            </li>
+            <li className="li">
+              <a
+                className="link_li"
+                href="https://customsurgical.co/shipping/"
+                target="_blank"
+              >
+                Shipping
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="bottom_footer">
+          <hr></hr>
+          <div>Custom Surgical</div>
+        </div>
       </footer>
     </Layout>
   )
@@ -171,35 +265,33 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    
-        site {
-          siteMetadata {
-            title
-          }
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { eq: "Education" } } }
+    ) {
+      nodes {
+        excerpt
+        fields {
+          slug
         }
-        allMarkdownRemark(
-          sort: {fields: [frontmatter___date], order: DESC}
-          filter: {frontmatter: {tags: {eq: "Education"}}}
-        ) {
-          nodes {
-            excerpt
-            fields {
-              slug
-            }
-            timeToRead
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              description
-              tags
-              image {
-                childImageSharp {
-                  gatsbyImageData
-                }}
+        timeToRead
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          tags
+          image {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }
       }
-      
+    }
+  }
 `
-
