@@ -180,26 +180,36 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+query {
     
-        site {
-          siteMetadata {
-            title
-          }
-        }
-        timeToRead
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-          image {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {tags: {eq: "Technology"}}}
+  ) {
+    nodes {
+      excerpt
+      fields {
+        slug
       }
+      timeToRead
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }}
+      }
+    }
+  }
+}
       
 `
 
