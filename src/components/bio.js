@@ -7,15 +7,9 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import Button from "@mui/material/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Item from "../components/category"
-
-import logo from "/src/images/logo.png"
-import { CenterFocusStrong } from "@mui/icons-material"
-import { textAlign } from "@mui/system"
 
 const Bio = post => {
   const data = useStaticQuery(graphql`
@@ -46,18 +40,7 @@ const Bio = post => {
     }
   `)
 
-const tagstyle = {
-  color: "#FFA100",
-  padding: "5px",
-  padding: "5px 35px",
-  width: "max-content",
-  background: "#FFA10033",
-  borderRadius: "5px",
-  textAlign: "center",
-  fontSize: "16px",
-  marginBottom: "15%",
-  textTransform: "uppercase"
-};
+
   console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   /* const author = data.site.siteMetadata?.author
@@ -65,7 +48,11 @@ const tagstyle = {
 
   return (
     <div className="bio">
-      <GatsbyImage
+       <Link
+                to={data.allMarkdownRemark.nodes[0].fields.slug}
+                itemProp="url"
+                style={{width: "100%"}}
+              ><GatsbyImage
         image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
         key=""
         imgStyle={{
@@ -76,13 +63,26 @@ const tagstyle = {
           boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
           width: "100%"
         }}
-      />
+      /></Link>
 
       <div className="bio_text_flex"> 
         {" "}
         <div>
           {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
-            <div key={i} style = {tagstyle}>
+             <div
+             key={i}
+             className={
+               tag === "News"
+                 ? "tags-news"
+                 : tag === "Medicine"
+                 ? "tags-medicine"
+                 : tag === "Technology"
+                 ? "tags-technology"
+                 : tag === "Education"
+                 ? "tags-education"
+                 : "tags-news"
+             }
+           >
               {tag}
               {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
                 ? ", "
@@ -91,15 +91,18 @@ const tagstyle = {
           ])}
         </div>
         <div className="article_h2">
-          <h2 style={{ color: "white" }}>
+        <Link
+                to={data.allMarkdownRemark.nodes[0].fields.slug}
+                itemProp="url"
+              ><h2 style={{ color: "white" }}>
             {" "}
             {data.allMarkdownRemark.nodes[0].frontmatter.title}
-          </h2>
+          </h2></Link>
         </div>
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
-        <Button variant="contained" style={{background: "#FFA100"}}>
+        <Button variant="contained" style={{ background: "#FFA100" }} className = "read">
           <Link
             to={data.allMarkdownRemark.nodes[0].fields.slug}
             style={{ color: "white" }}
