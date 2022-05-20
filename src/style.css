@@ -859,6 +859,17 @@ button, [type="button"], [type="reset"], [type="submit"]{
  }
 }
 
+@media (max-width: 800px){
+  .top{
+    display: block;
+  }
+  .flex_blocks{
+   width: 80%;
+   margin-bottom: 5%;
+
+ }
+}
+
 @media (max-width: 600px){
   footer{
     padding: 80px;

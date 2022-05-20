@@ -69,13 +69,15 @@ const BlogIndex = ({ data, location }) => {
 
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }}>
-        <Grid item>
-          <ol style={{ listStyle: `none` }} className="news_block">
+       
             {posts.slice(0, visible).map(post => {
               const title = post.frontmatter.title || post.fields.slug
 
               return (
-                <li key={post.fields.slug} className="list">
+                <Grid item xs={10} md={4} sm={6} key={post.fields.slug} style={{
+                  marginLeft: "auto",
+                  marginRight: "auto"
+                }}>
                   <article
                     className="post-list-item"
                     itemScope
@@ -128,11 +130,10 @@ const BlogIndex = ({ data, location }) => {
                       />
                     </section>
                   </article>
-                </li>
+               </Grid>
               )
             })}
-          </ol>
-        </Grid>
+         
       </Grid>
     </Box>
     <div style={{textAlign: "center"}}>
