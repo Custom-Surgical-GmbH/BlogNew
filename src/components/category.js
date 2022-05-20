@@ -58,21 +58,45 @@ const style = {
 
 export default function FullWidthGrid() {
   return (
-    <div className='category'><h3 className='category_text'>Browse by Category</h3><h5 className="select_category">Select a Category to see more related content</h5>
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={1} className='box'>
-        <Grid item  >
-        <Link to="/news"> <Cat itemID='grid_category'>NEWS</Cat></Link> 
-        </Grid>
-        <Grid item >
-        <Link to="/education">   <Cat itemID='grid_category'>EDUCATION</Cat></Link>
-        </Grid>
-        <Grid item >
-        <Link to="/technology">  <Cat itemID='grid_category'>TECHNOLOGY</Cat></Link>
-        </Grid>
-        <Grid item >
-        <Link to="/medicine">  <Cat itemID='grid_category'>MEDICINE</Cat></Link>
-        </Grid>
+    <div className="category">
+      <h3 className="category_text">Browse by Category</h3>
+      <h5 className="select_category">
+        Select a Category to see more related content
+      </h5>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={1} className="box">
+          <Grid item>
+            <Link to="/news">
+              {" "}
+              <Cat itemID="grid_category-news" style={style.news}>
+                NEWS
+              </Cat>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/education">
+              {" "}
+              <Cat itemID="grid_category-education" style={style.education}>
+                EDUCATION
+              </Cat>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/technology">
+              {" "}
+              <Cat itemID="grid_category-technology" style={style.technology}>
+                TECHNOLOGY
+              </Cat>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/medicine">
+              {" "}
+              <Cat itemID="grid_category-medicine" style={style.medicine}>
+                MEDICINE
+              </Cat>
+            </Link>
+          </Grid>
       </Grid>
     </Box></div>
   );

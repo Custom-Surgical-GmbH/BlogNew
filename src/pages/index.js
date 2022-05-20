@@ -149,29 +149,45 @@ const BlogIndex = ({ data, location }) => {
                         /></Link>
                         <div className="photo_text_flex">
            
-           <div className="tags_photo" style={{ color: "black" }}>
-             {data.allMarkdownRemark.nodes[0].frontmatter.tags.map(
-               (tag, i) => [
-                 <div key={i} style={tagsstyled}>
-                   {tag}
-                   {i <
-                   data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
-                     ? ", "
-                     : ""}
-                 </div>,
-               ]
-             )}
-           </div>{" "} <div className="timer">
-             <StaticImage
-               layout="fixed"
-               formats={["auto", "webp", "avif"]}
-               src="../images/timer.png"
-               quality={100}
-               alt="Profile picture"
-             />
-             <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[0].timeToRead} mins</div>
-           </div>
-         </div>
+                        <div
+                            className="tags_photo"
+                            style={{ color: "black" }}
+                          >
+                            {post.frontmatter.tags.map((tag, i) => [
+                              <div
+                                key={i}
+                                className={
+                                  tag === "News"
+                                    ? "tags-news"
+                                    : tag === "Medicine"
+                                    ? "tags-medicine"
+                                    : tag === "Technology"
+                                    ? "tags-technology"
+                                    : tag === "Education"
+                                    ? "tags-education"
+                                    : "tags-news"
+                                }
+                              >
+                                {tag}
+                                {i < post.frontmatter.tags.length - 1
+                                  ? ", "
+                                  : ""}
+                              </div>,
+                            ])}
+                          </div>{" "}
+                          <div className="timer">
+                            <StaticImage
+                              layout="fixed"
+                              formats={["auto", "webp", "avif"]}
+                              src="../images/timer.png"
+                              quality={100}
+                              alt="Profile picture"
+                            />
+                            <div className="timeread">
+                              &#160;{post.timeToRead} mins
+                            </div>
+                          </div>
+                        </div>
 
                         <h2 className="h2_arc">
                           <Link to={post.fields.slug} itemProp="url" className="link_arc">
@@ -220,7 +236,7 @@ const BlogIndex = ({ data, location }) => {
         }}></input>
         <input type="submit" value="Subscribe" style={{
           background: "#FFA100",    
-          boxShadow: "0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
+        boxShadow: "0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
           borderRadius: "5px",
           padding: "10px 30px",
           fontWeight: "500",

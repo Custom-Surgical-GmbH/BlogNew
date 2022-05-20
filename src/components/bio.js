@@ -40,18 +40,7 @@ const Bio = post => {
     }
   `)
 
-const tagstyle = {
-  color: "#FFA100",
-  padding: "5px",
-  padding: "5px 35px",
-  width: "max-content",
-  background: "#FFA10033",
-  borderRadius: "5px",
-  textAlign: "center",
-  fontSize: "16px",
-  marginBottom: "15%",
-  textTransform: "uppercase"
-};
+
   console.log(data)
   // Set these values by editing "siteMetadata" in gatsby-config.js
   /* const author = data.site.siteMetadata?.author
@@ -80,7 +69,20 @@ const tagstyle = {
         {" "}
         <div>
           {data.allMarkdownRemark.nodes[0].frontmatter.tags.map((tag, i) => [
-            <div key={i} style = {tagstyle}>
+             <div
+             key={i}
+             className={
+               tag === "News"
+                 ? "tags-news"
+                 : tag === "Medicine"
+                 ? "tags-medicine"
+                 : tag === "Technology"
+                 ? "tags-technology"
+                 : tag === "Education"
+                 ? "tags-education"
+                 : "tags-news"
+             }
+           >
               {tag}
               {i < data.allMarkdownRemark.nodes[0].frontmatter.tags.length - 1
                 ? ", "
