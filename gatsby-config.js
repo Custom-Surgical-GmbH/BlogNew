@@ -53,6 +53,28 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`, // Changed google-analytics.js from this plugin on line on line 39 - added this: 'send_page_view': false - to fix page_view repeating
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GOOGLE_ANALYTICS_ID,
+          cookieName: 'gatsby-gdpr-cookies',
+          anonymize: true, // https://github.com/andrezimpel/gatsby-plugin-gdpr-cookies#anonymize
+          allowAdFeatures: false,
+        },
+        facebookPixel: {
+          pixelId: process.env.FACEBOOK_PIXEL_ID, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-cookies', // default
+        },
+        hotjar: {
+          hjid: process.env.HOTJAR_ID,
+          hjsv: '6',
+          cookieName: 'gatsby-gdpr-cookies', // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development'],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
@@ -61,25 +83,8 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-    {
-
-
-      
-
-      resolve: `gatsby-plugin-addsocialshare-share`,
-      options: {
-        size: 48,
-        //providers:{"facebook":"Facebook","linkedin":"Linkedin","pinterest":"Pinterest","twitter":"Twitter","cloudshare":"Cloud Share"},
-        //corners:"5%",
-        //bgcolor:"#000000",
-        interfacetype: "floating", //inline,floating
-        topoffset: "20%", //work only floating interface
-        id: ".ass_interface",
-        alignment_desktop: "left", //left,right,hide
-        alignment_mobile: "bottom", //top,bottom,hide
-      },
-
-
+   
+{
 
       resolve: `gatsby-plugin-feed`,
       options: {
