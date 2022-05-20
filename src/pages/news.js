@@ -4,17 +4,11 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Item from "../components/category"
-import Bio from "../components/bio"
-/*import Blocks from "../components/blocks"*/
-import { styled } from '@mui/material/styles';
+import Banner from "../components/banner"
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { StaticImage } from "gatsby-plugin-image"
 import logo from '/src/images/logo.png';
-import Button from '@mui/material/Button';
-import sub from "/src/images/sub.png"
 
 const BlogIndex =  ({data,  location }) => {
 
@@ -148,12 +142,7 @@ const BlogIndex =  ({data,  location }) => {
       <button onClick={showMoreItems} className = "loadmore">
         Load more
       </button></div>
-      <div className="banner">
-        <img src={sub} className = "sub"></img>
-        <div className="banner_text"><div className="sub_text">SUBSCRIBE TO OUR NEWSLETTER</div>
-        <div className="sub_small">Discover how to get the best-recording settings, news, and exclusive discounts!</div>
-        </div>
-        </div>
+      <Banner/>
         <footer>
         <div className="footer_li">
         <ul><div className="ul">About us</div>
