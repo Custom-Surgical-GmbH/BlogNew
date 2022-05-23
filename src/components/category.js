@@ -34,8 +34,8 @@ const style = {
     fontSize: "16px",
     textTransform: "uppercase",
   },
-  medicine: {
-    color: "#FFA100",
+  ophthalmology: {
+    color: "#8F4FFF",
     padding: "5px",
     padding: "5px 35px",
     width: "max-content",
@@ -73,14 +73,7 @@ export default function FullWidthGrid() {
               </Cat>
             </Link>
           </Grid>
-          <Grid item>
-            <Link to="/education">
-              {" "}
-              <Cat itemID="grid_category-education" style={style.education}>
-                EDUCATION
-              </Cat>
-            </Link>
-          </Grid>
+          
           <Grid item>
             <Link to="/technology">
               {" "}
@@ -90,10 +83,10 @@ export default function FullWidthGrid() {
             </Link>
           </Grid>
           <Grid item>
-            <Link to="/medicine">
+            <Link to="/ophthalmology">
               {" "}
-              <Cat itemID="grid_category-medicine" style={style.medicine}>
-                MEDICINE
+              <Cat itemID="grid_category-ophthalmology" style={style.ophthalmology}>
+              OPHTHALMOLOGY
               </Cat>
             </Link>
           </Grid>

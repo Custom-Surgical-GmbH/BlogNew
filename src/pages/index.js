@@ -14,7 +14,7 @@ import logo from "/src/images/logo.png"
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
-  const [visible, setVisible] = useState(6)
+  const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
 
   const showMoreItems = () => {
@@ -111,12 +111,11 @@ const BlogIndex = ({ data, location }) => {
                             className={
                               tag === "News"
                                 ? "tags-news"
-                                : tag === "Medicine"
-                                ? "tags-medicine"
+                                : tag === "Ophthalmology"
+                                ? "tags-ophthalmology"
                                 : tag === "Technology"
                                 ? "tags-technology"
-                                : tag === "Education"
-                                ? "tags-education"
+                                
                                 : "tags-news"
                             }
                           >
