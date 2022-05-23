@@ -13,8 +13,15 @@ import logo from "/src/images/logo.png"
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
+  const [enabled, setEnabled] = useState(true)
+
   const showMoreItems = () => {
-    setVisible(prevValue => prevValue + 3)
+    if (data.allMarkdownRemark.totalCount > visible) {
+      setVisible(prevValue => prevValue + 3)
+      setEnabled(true)
+    } else {
+      setEnabled(false)
+    }
   }
 
   console.log(data)
@@ -150,9 +157,16 @@ const BlogIndex = ({ data, location }) => {
         </Grid>
       </Box>
       <div style={{ textAlign: "center" }}>
-        <button onClick={showMoreItems} className="loadmore">
-          Load more
-        </button>
+        {/* If there are stills post to show, show the button enabled, otherwise disabled it */}
+        {enabled ? (
+          <button onClick={showMoreItems} className="loadmore">
+            Load more
+          </button>
+        ) : (
+          <button onClick={showMoreItems} className="loadmore_disabled">
+            Load more
+          </button>
+        )}
       </div>
       <SubscriptionBanner path={"technology-page"} tag={"Techonology"} />
       <footer>
@@ -297,6 +311,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      totalCount
     }
   }
 `

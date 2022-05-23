@@ -566,6 +566,16 @@ a {
   transition: 0.3s all;
 }
 
+.loadmore_disabled{
+  background-color: #E0E0E0;
+  padding: 10px 60px;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: #A6A6A6;
+  font-weight: 500;
+}
+
 .read:hover{
   cursor: pointer;
   transform: scale(1.01);

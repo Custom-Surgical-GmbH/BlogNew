@@ -13,8 +13,15 @@ import logo from "/src/images/logo.png"
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
+  const [enabled, setEnabled] = useState(true)
+
   const showMoreItems = () => {
-    setVisible(prevValue => prevValue + 3)
+    if (data.allMarkdownRemark.totalCount > visible) {
+      setVisible(prevValue => prevValue + 3)
+      setEnabled(true)
+    } else {
+      setEnabled(false)
+    }
   }
 
   console.log(data)
@@ -72,82 +79,94 @@ const BlogIndex = ({ data, location }) => {
 
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }}>
-              {posts.slice(0, visible).map(post => {
-                const title = post.frontmatter.title || post.fields.slug
+          {posts.slice(0, visible).map(post => {
+            const title = post.frontmatter.title || post.fields.slug
 
-                return (
-                  <Grid item xs={10} md={4} sm={6} key={post.fields.slug} style={{
-                    marginLeft: "auto",
-                    marginRight: "auto"
-                  }}>
-                    <article
-                      className="post-list-item"
-                      itemScope
-                      itemType="http://schema.org/Article"
-                    >
-                      <header>
-                        <Link to={post.fields.slug} itemProp="url">
-                          {" "}
-                          <GatsbyImage
-                            image={getImage(post.frontmatter.image)}
-                            key=""
-                            imgStyle={{
-                              borderRadius: "5px",
-                            }}
-                            style={{
-                              borderRadius: "5px",
-                              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-                              height: "270px",
-                            }}
-                          />
-                        </Link>
-                        <div className="text_flex_pages">
-                          <div className="timer">
-                            <StaticImage
-                              layout="fixed"
-                              formats={["auto", "webp", "avif"]}
-                              src="../images/timer.png"
-                              quality={100}
-                              alt="Profile picture"
-                            />
-                            <div className="timeread">
-                              &#160;{post.timeToRead} mins
-                            </div>
-                          </div>
-                        </div>
-
-                        <h2 className="h2_arc">
-                          <Link
-                            to={post.fields.slug}
-                            itemProp="url"
-                            className="link_news"
-                          >
-                            {title}
-                          </Link>
-                        </h2>
-
-                        <div></div>
-                      </header>
-                      <section>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              post.frontmatter.description || post.excerpt,
-                          }}
-                          itemProp="description"
+            return (
+              <Grid
+                item
+                xs={10}
+                md={4}
+                sm={6}
+                key={post.fields.slug}
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <Link to={post.fields.slug} itemProp="url">
+                      {" "}
+                      <GatsbyImage
+                        image={getImage(post.frontmatter.image)}
+                        key=""
+                        imgStyle={{
+                          borderRadius: "5px",
+                        }}
+                        style={{
+                          borderRadius: "5px",
+                          boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+                          height: "270px",
+                        }}
+                      />
+                    </Link>
+                    <div className="text_flex_pages">
+                      <div className="timer">
+                        <StaticImage
+                          layout="fixed"
+                          formats={["auto", "webp", "avif"]}
+                          src="../images/timer.png"
+                          quality={100}
+                          alt="Profile picture"
                         />
-                      </section>
-                    </article>
-                 </Grid>
-                )
-              })}
-            
+                        <div className="timeread">
+                          &#160;{post.timeToRead} mins
+                        </div>
+                      </div>
+                    </div>
+
+                    <h2 className="h2_arc">
+                      <Link
+                        to={post.fields.slug}
+                        itemProp="url"
+                        className="link_news"
+                      >
+                        {title}
+                      </Link>
+                    </h2>
+
+                    <div></div>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              </Grid>
+            )
+          })}
         </Grid>
       </Box>
       <div style={{ textAlign: "center" }}>
-        <button onClick={showMoreItems} className="loadmore">
-          Load more
-        </button>
+        {/* If there are stills post to show, show the button enabled, otherwise disabled it */}
+        {enabled ? (
+          <button onClick={showMoreItems} className="loadmore">
+            Load more
+          </button>
+        ) : (
+          <button onClick={showMoreItems} className="loadmore_disabled">
+            Load more
+          </button>
+        )}
       </div>
       <SubscriptionBanner page={"news-page"} tag={"News"} />
       <footer>
@@ -292,6 +311,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      totalCount
     }
   }
 `
