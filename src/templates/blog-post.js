@@ -178,7 +178,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
       </div>
 
-      <Banner />
+      
 
       <SubscriptionBanner
         path={post.frontmatter.title}
