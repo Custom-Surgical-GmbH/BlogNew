@@ -11,11 +11,11 @@ const SubscriptionBanner = ({ path, tags, ...props }) => {
   const [inputEmail, setInputEmail] = useState("")
 
   const [showAlert, setShowAlert] = useState(null)
+  const [showAlertMessage, setShowAlertMessage] = useState("")
 
-  const showAlertTimeout = alertState => {
-    console.log(showAlert)
+  const showAlertTimeout = (alertState, msg) => {
     setShowAlert(alertState)
-    console.log(showAlert)
+    setShowAlertMessage(msg)
     setTimeout(() => {
       setShowAlert(null)
     }, 6000)
@@ -27,8 +27,10 @@ const SubscriptionBanner = ({ path, tags, ...props }) => {
     if (regex.test(email) === false) {
       setEmailError("Email is not valid")
       return false
+    } else {
+      setEmailError("")
+      return true
     }
-    return true
   }
   //const post = data.markdownRemark
   const listFields = {
@@ -63,12 +65,13 @@ const SubscriptionBanner = ({ path, tags, ...props }) => {
       //   .catch(error => console.log("error", error))
       try {
         const response = addToMailchimp(inputEmail, listFields).then(res => {
-          if (res.status === 200) {
+          console.log(res)
+          if (res.result === "success") {
             setInputEmail("")
-            showAlertTimeout(true)
-          } else if (res.status === 400) {
+            showAlertTimeout(true, res.msg)
+          } else if (res.result === "error") {
             setInputEmail("")
-            showAlertTimeout(false)
+            showAlertTimeout(false, res.msg)
           }
         })
       } catch {}
@@ -122,14 +125,14 @@ const SubscriptionBanner = ({ path, tags, ...props }) => {
           </form>
           <span style={{ color: "red" }}>{emailError}</span>
           {showAlert === null ? null : showAlert ? (
-            <Alert severity="success">
-              <AlertTitle>Success</AlertTitle>
-              This is a success alert — <strong>check it out!</strong>
+            <Alert severity="success" marginTop={2}>
+              <AlertTitle>Done! </AlertTitle>
+              {showAlertMessage}
             </Alert>
           ) : (
-            <Alert severity="error">
+            <Alert severity="error" marginTop={2}>
               <AlertTitle>Error</AlertTitle>
-              This is a success alert — <strong>check it out!</strong>
+              {showAlertMessage}
             </Alert>
           )}
         </div>
