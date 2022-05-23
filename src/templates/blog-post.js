@@ -107,6 +107,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   borderRadius: "5px",
                 }}
                 style={{
+                  maxHeight: "550px",
                   borderRadius: "5px",
                   boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                 }}
@@ -144,14 +145,18 @@ const BlogPostTemplate = ({ data, location }) => {
             fontSize: "20px",
           }}
         >
-          <li>
+          <li style={{
+            width: "45%"
+          }}>
             {previous && (
               <Link to={previous.fields.slug} rel="prev" className="prev">
                 &#10094; {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li style={{
+            width: "45%"
+          }}>
             {next && (
               <Link to={next.fields.slug} rel="next" className="prev">
                 {next.frontmatter.title} &#10095;
@@ -198,21 +203,18 @@ const BlogPostTemplate = ({ data, location }) => {
 
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }}>
-          <Grid item>
-            <ol
-              className="news_block"
-              style={{
-                width: "80%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                listStyle: "none",
-              }}
-            >
+         
+            
               {posts.slice(0, visible).map(post => {
                 const title = post.frontmatter.title || post.fields.slug
 
                 return (
-                  <li key={post.fields.slug} className="list">
+                  <Grid item xs={10} md={4} sm={6} key={post.fields.slug} style={{
+                    width: "80%",
+                    marginLeft: "auto",
+                    marginRight: "auto"
+                  }}>
+                 
                     <article
                       className="post-list-item"
                       itemScope
@@ -270,11 +272,11 @@ const BlogPostTemplate = ({ data, location }) => {
                         />
                       </section>
                     </article>
-                  </li>
+                 </Grid>
                 )
               })}
-            </ol>
-          </Grid>
+            
+          
         </Grid>
       </Box>
       <div style={{ textAlign: "center" }}>
