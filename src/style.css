@@ -511,26 +511,6 @@ a {
   text-transform: uppercase;
 }
 
-.share-btn {
-  display: inline-block;
-  color: #ffffff;
-  border: none;
-  padding: 0.1em 0.6em;
-  outline: none;
-  text-align: center;
-  font-size: 0.9em;
-  margin: 0 0.2em;
-}
-
-.share-btn:focus,
-.share-btn:hover {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.share-btn:active {
-  color: #e2e2e2;
-}
 
 .flex_post{
   display: flex;
@@ -679,32 +659,6 @@ a{
   margin-bottom: 5em;
 }
 
-.sharing_icon{
-  margin-top: 5em;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5em;
-  width: 55%;
- 
-}
-
-.sharing_icon_bottom{
-  margin-top: 5em;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5em;
-  width: 15%;
-  margin-left: auto;
-  margin-right: auto;
-
- 
-}
-
-.sharing:hover{
-  cursor: pointer;
-  transform: scale(1.02);
-  transition: 0.3s all;
-}
 .blog_left{
   width: 30%;
 }
@@ -736,17 +690,17 @@ a{
 
 .banner{
   position: relative;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .banner_text{
-position: absolute;
-margin-left: auto;
-margin-right: 10%;
-width: 35%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: 10%;
+  width: 35%;
 }
 
 .sub_text{
@@ -761,9 +715,9 @@ width: 35%;
 
 footer{
   background-color: rgb(10, 10, 10);
-    color: rgb(255, 255, 255);
-    width: 100%;
-    padding: 40px 24px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 40px 24px;
 }
 
 .footer_li{
@@ -807,7 +761,7 @@ footer{
 .link_news{
   color: black;
   font-weight: 600;
-font-size: 24px;
+  font-size: 24px;
 }
 
 .link_news:hover{
@@ -818,7 +772,7 @@ font-size: 24px;
 .link_edu{
   color: black;
   font-weight: 600;
-font-size: 24px;
+  font-size: 24px;
 }
 
 .link_edu:hover{
@@ -829,7 +783,7 @@ font-size: 24px;
 .link_tech{
   color: black;
   font-weight: 600;
-font-size: 24px;
+  font-size: 24px;
 }
 
 .link_tech:hover{
@@ -839,6 +793,61 @@ font-size: 24px;
 
 button, [type="button"], [type="reset"], [type="submit"]{
   cursor: pointer;
+}
+
+.post-meta-share-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.post-meta-share-icons button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  transition: all 0.2s ease-out;
+}
+
+svg{
+  width: 30px;
+  height: 30px;
+}
+
+.sharing_icon{
+  display: flex;
+  font-size: 20px;
+  width: 45%;
+  font-weight: 700;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+
+.sharing_bottom{
+  display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    width: 13%;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-meta-share-icons svg {
+  color: var(--theme-ui-colors-secondary, #000000);
+}
+
+.post-meta-share-icons button:hover {
+  transform: scale(1.15);
+}
+
+.post-meta-share-icons button:focus {
+  outline: 0;
+}
+
+.post-meta-share-icons button:last-child {
+  margin-right: 0;
 }
 /* Media queries */
 
