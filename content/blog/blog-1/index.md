@@ -5,6 +5,7 @@ tags: ["Medicine"]
 description: "Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was…"
 image: "./cute-dog.jpg"
 views: 900
+author: by Editor
 ---
 
 Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!

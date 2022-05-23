@@ -100,6 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               views
+              author
             }
           }
         }
@@ -126,6 +127,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
       const views = post.frontmatter.views
+      const author = post.frontmatter.author
 
       createPage({
         path: post.fields.slug,
@@ -135,6 +137,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
           views,
+          author,
         },
       })
     })

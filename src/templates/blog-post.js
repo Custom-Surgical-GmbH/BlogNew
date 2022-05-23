@@ -88,6 +88,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
 
               <div style={{marginTop: "5%"}}>{post.frontmatter.date}</div>
+              <div style={{marginTop: "5%", fontWeight: "bold", fontSize: "20px"}}>{post.frontmatter.author}</div>
 
               <div className="sharing_icon">
                 {" "}
@@ -363,6 +364,7 @@ export const pageQuery = graphql`
         description
         tags
         views
+        author
         image {
           childImageSharp {
             gatsbyImageData
@@ -380,6 +382,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           title
+          author
           image {
             childImageSharp {
               gatsbyImageData
