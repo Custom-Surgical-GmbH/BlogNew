@@ -860,6 +860,16 @@ svg{
  .bio p{
    padding-bottom: var(--spacing-0);
  }
+ .bio p{
+   margin-bottom: 3%;
+ }
+ .article_h2{
+   padding-bottom: 0;
+ }
+ h2{
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-2);
+ }
 }
 
 @media (max-width: 1100px){
@@ -875,7 +885,16 @@ svg{
   .flex_blocks{
    width: 80%;
    margin-bottom: 5%;
-
+ }
+ .bio{
+   display: block;
+   padding-right: 0;
+ }
+ .bio_text_flex{
+   margin-top: 5%;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
  }
 }
 
