@@ -54,14 +54,14 @@ const BlogIndex = ({ data, location }) => {
       <div className="viewed" style={{ width: "90%" }}>
         <div
           style={{
-            color: "#FFA100",
+            color: "#8F4FFF",
             fontSize: "36px",
             fontWeight: "700",
             marginTop: "5%",
             marginBottom: "0%",
           }}
         >
-          Medicine
+          Ophthalmology
         </div>
         <div
           style={{
@@ -132,7 +132,7 @@ const BlogIndex = ({ data, location }) => {
                       <Link
                         to={post.fields.slug}
                         itemProp="url"
-                        className="link_news"
+                        className="link_edu"
                       >
                         {title}
                       </Link>
@@ -289,7 +289,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { eq: "Medicine" } } }
+      filter: { frontmatter: { tags: { eq: "Ophthalmology" } } }
     ) {
       nodes {
         excerpt

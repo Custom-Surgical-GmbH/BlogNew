@@ -62,14 +62,13 @@ const BlogPostTemplate = ({ data, location }) => {
                     key={i}
                     className={
                       tag === "News"
-                        ? "tags-news"
-                        : tag === "Medicine"
-                        ? "tags-medicine"
-                        : tag === "Technology"
-                        ? "tags-technology"
-                        : tag === "Education"
-                        ? "tags-education"
-                        : "tags-news"
+                                ? "tags-news"
+                                : tag === "Ophthalmology"
+                                ? "tags-ophthalmology"
+                                : tag === "Technology"
+                                ? "tags-technology"
+                                
+                                : "tags-news"
                     }
                   >
                     {tag}
