@@ -144,18 +144,22 @@ const BlogPostTemplate = ({ data, location }) => {
             fontSize: "20px",
           }}
         >
-          <li style={{
-            width: "45%"
-          }}>
+          <li
+            style={{
+              width: "45%",
+            }}
+          >
             {previous && (
               <Link to={previous.fields.slug} rel="prev" className="prev">
                 &#10094; {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li style={{
-            width: "45%"
-          }}>
+          <li
+            style={{
+              width: "45%",
+            }}
+          >
             {next && (
               <Link to={next.fields.slug} rel="next" className="prev">
                 {next.frontmatter.title} &#10095;
@@ -182,10 +186,8 @@ const BlogPostTemplate = ({ data, location }) => {
         />
       </div>
 
-      
-
       <SubscriptionBanner
-        path={post.frontmatter.title}
+        postName={post.frontmatter.title}
         tag={post.frontmatter.tags}
       />
 
@@ -202,80 +204,82 @@ const BlogPostTemplate = ({ data, location }) => {
 
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }}>
-         
-            
-              {posts.slice(0, visible).map(post => {
-                const title = post.frontmatter.title || post.fields.slug
+          {posts.slice(0, visible).map(post => {
+            const title = post.frontmatter.title || post.fields.slug
 
-                return (
-                  <Grid item xs={10} md={4} sm={6} key={post.fields.slug} style={{
-                    width: "80%",
-                    marginLeft: "auto",
-                    marginRight: "auto"
-                  }}>
-                 
-                    <article
-                      className="post-list-item"
-                      itemScope
-                      itemType="http://schema.org/Article"
-                    >
-                      <header>
-                        <Link to={post.fields.slug} itemProp="url">
-                          {" "}
-                          <GatsbyImage
-                            image={getImage(post.frontmatter.image)}
-                            key=""
-                            imgStyle={{
-                              borderRadius: "5px",
-                            }}
-                            style={{
-                              borderRadius: "5px",
-                              boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
-                              height: "210px",
-                            }}
-                          />
-                        </Link>
-                        <div className="text_flex_pages">
-                          <div className="timer">
-                            <StaticImage
-                              layout="fixed"
-                              formats={["auto", "webp", "avif"]}
-                              src="../images/timer.png"
-                              quality={100}
-                              alt="Profile picture"
-                            />
-                            <div className="timeread">
-                              &#160;{post.timeToRead} mins
-                            </div>
-                          </div>
-                        </div>
-
-                        <h2 className="h2_arc">
-                          <Link
-                            to={post.fields.slug}
-                            itemProp="url"
-                            className="link_arc"
-                          >
-                            {title}
-                          </Link>
-                        </h2>
-
-                        <div></div>
-                      </header>
-                      <section>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html: post.description || post.excerpt,
-                          }}
-                          itemProp="description"
+            return (
+              <Grid
+                item
+                xs={10}
+                md={4}
+                sm={6}
+                key={post.fields.slug}
+                style={{
+                  width: "80%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <Link to={post.fields.slug} itemProp="url">
+                      {" "}
+                      <GatsbyImage
+                        image={getImage(post.frontmatter.image)}
+                        key=""
+                        imgStyle={{
+                          borderRadius: "5px",
+                        }}
+                        style={{
+                          borderRadius: "5px",
+                          boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
+                          height: "210px",
+                        }}
+                      />
+                    </Link>
+                    <div className="text_flex_pages">
+                      <div className="timer">
+                        <StaticImage
+                          layout="fixed"
+                          formats={["auto", "webp", "avif"]}
+                          src="../images/timer.png"
+                          quality={100}
+                          alt="Profile picture"
                         />
-                      </section>
-                    </article>
-                 </Grid>
-                )
-              })}
-            
-          
+                        <div className="timeread">
+                          &#160;{post.timeToRead} mins
+                        </div>
+                      </div>
+                    </div>
+
+                    <h2 className="h2_arc">
+                      <Link
+                        to={post.fields.slug}
+                        itemProp="url"
+                        className="link_arc"
+                      >
+                        {title}
+                      </Link>
+                    </h2>
+
+                    <div></div>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              </Grid>
+            )
+          })}
         </Grid>
       </Box>
       <div style={{ textAlign: "center" }}>

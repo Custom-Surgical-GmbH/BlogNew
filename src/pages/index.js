@@ -115,7 +115,6 @@ const BlogIndex = ({ data, location }) => {
                                 ? "tags-ophthalmology"
                                 : tag === "Technology"
                                 ? "tags-technology"
-                                
                                 : "tags-news"
                             }
                           >
@@ -176,7 +175,7 @@ const BlogIndex = ({ data, location }) => {
           </button>
         )}
       </div>
-      <SubscriptionBanner path={"index-page"} tag={""} />
+      <SubscriptionBanner postName={"index-page"} tag={""} />
       <footer>
         <div className="footer_li">
           <ul>

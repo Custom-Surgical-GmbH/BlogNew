@@ -6,7 +6,7 @@ import AlertTitle from "@mui/material/AlertTitle"
 
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
-const SubscriptionBanner = ({ path, tags, ...props }) => {
+const SubscriptionBanner = ({ postName, tag, ...props }) => {
   const [emailError, setEmailError] = useState("")
   const [inputEmail, setInputEmail] = useState("")
 
@@ -35,13 +35,12 @@ const SubscriptionBanner = ({ path, tags, ...props }) => {
   //const post = data.markdownRemark
   const listFields = {
     ORIGIN: "blog",
-    POSTPATH: path,
-    POSTTAGS: tags,
+    POSTNAME: postName,
+    POSTTAG: tag,
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(`introducing customer email > ${inputEmail}`)
     if (emailValidation(inputEmail)) {
       // let myHeaders = new Headers()
       // myHeaders.append("Authorization", process.env.MAILCHIMP_API_KEY)

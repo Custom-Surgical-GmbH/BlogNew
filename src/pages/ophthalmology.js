@@ -166,7 +166,7 @@ const BlogIndex = ({ data, location }) => {
           </button>
         )}
       </div>
-      <SubscriptionBanner path={"medicine-page"} tag={"Medicine"} />
+      <SubscriptionBanner postName={"medicine-page"} tag={"Medicine"} />
       <footer>
         <div className="footer_li">
           <ul>
