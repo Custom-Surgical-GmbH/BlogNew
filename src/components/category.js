@@ -68,7 +68,7 @@ export default function FullWidthGrid() {
         Select a Category to see more related content
       </h5>
       <Box sx={{ flexGrow: 1 }} >
-        <Grid container spacing={1} width={{sm: '50%', md:'100%'}}  className="box" style={{marginLeft: "auto", marginRight: " auto"}}>
+        <Grid container spacing={1} width={{xs: '50%', sm:'100%'}} justifyContent={{md: 'center', sm: 'center', xs: 'center'}}  className="box" style={{marginLeft: "auto", marginRight: " auto"}}>
           <Grid item>
             <Link to="/news">
               {" "}

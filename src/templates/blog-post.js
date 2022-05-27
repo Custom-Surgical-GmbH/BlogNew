@@ -122,28 +122,12 @@ const BlogPostTemplate = ({ data, location }) => {
           />
         </div>
       </article>
-      <nav
+      <nav 
         className="blog-post-nav"
-        style={{
-          width: "70%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: "8%",
-        }}
+        
       >
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-            marginBottom: "3%",
-            marginRight: "3%",
-            marginLeft: "3%",
-            fontWeight: "700",
-            fontSize: "20px",
-          }}
+        <ul className="ul_arrow"
+         
         >
           <li
             style={{
@@ -204,7 +188,7 @@ const BlogPostTemplate = ({ data, location }) => {
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 

@@ -1,15 +1,22 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import ooops from "/src/images/we-are-hiring.jpg"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import logo from "/src/images/logo.png"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-
+  let header
+  header = <img style={{ width: "50px" }} src={logo} alt="Logo" />
   return (
     <Layout location={location} title={siteTitle}>
+      
+      <div className="header_logo">
+        <Link className="header-link-home" to="/">
+          <header className="global-header">{header}</header>{" "}
+        </Link>
+      </div>
       <Seo title="Page not found - Custom Surgical" />
       <div style={{
         maxWidth: "100%",
@@ -18,27 +25,8 @@ const NotFoundPage = ({ data, location }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
-      }}><h1 style={{
-        fontSize: "clamp(6.25rem,calc(6.25rem + ((1vw - 0.265625rem) * 9.3645)),15rem)",
-        fontWeight: "700",
-        textAlign: "center",
-        lineHeight: "1.0",
-        borderTopStyle: "solid",
-        borderTopWidth: "20px",
-        borderBottomWidth: "20px",
-        borderBottomStyle: "solid",
-        borderBottomColor: "#000000",
-        borderTopColor: "#000000",
-      }}>Ooops!</h1>
-      <img style={{
-              position: "absolute",
-              top: "0px",
-              mixBlendMode: "screen",
-              bottom: "0px",
-              height:"100%",
-              width: "100%",
-              objectFit: "contain"
-            }} src={ooops} alt="Logo"></img>
+      }}><h1 className="h1_error">Ooops!</h1>
+     
           <h1>404 - PAGE NOT FOUND</h1>
           <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p></div>
       <footer>

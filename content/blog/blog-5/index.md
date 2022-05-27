@@ -34,7 +34,7 @@ In April, we received quite some additions to MicroREC hardware. First, we launc
 
 <h2><b>May - updated app</h2></b>
 
-<img src="./MicroRECapp.gif" alt="Some configurations of MicroREC App"></img>
+<img src="./MicroRECapp.gif" alt="Some configurations of MicroREC App" style="max-width: 100%"></img>
 
 In May, we carried out many user testing sessions and updated the MicroREC app to make sure it fits the needs of surgeons. The updated MicroREC app enabled choosing the video recording quality, seeing recording time, and disabling audio.
 

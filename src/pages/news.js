@@ -72,13 +72,13 @@ const BlogIndex = ({ data, location }) => {
             fontSize: "20px",
           }}
         >
-          Description of what we talk about in this category
+          
         </div>
         <hr style={{ margin: 0 }}></hr>
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
