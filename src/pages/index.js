@@ -11,6 +11,7 @@ import SubscriptionBanner from "../components/banner"
 import { Box, Grid, Alert } from "@mui/material"
 import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
+// Test
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
@@ -66,19 +67,16 @@ const BlogIndex = ({ data, location }) => {
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}                
-         justifyContent={{xs: 'center', sm:'flex-start'}}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          justifyContent={{ xs: "center", sm: "flex-start" }}
+        >
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
             return (
-              <Grid
-                item
-                xs={10}
-                md={4}
-                sm={6}
-                key={post.fields.slug}
-              >
+              <Grid item xs={10} md={4} sm={6} key={post.fields.slug}>
                 <article
                   className="post-list-item"
                   itemScope
@@ -92,7 +90,7 @@ const BlogIndex = ({ data, location }) => {
                         key=""
                         imgStyle={{
                           borderRadius: "5px",
-                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                         }}
                         style={{
                           borderRadius: "5px",
