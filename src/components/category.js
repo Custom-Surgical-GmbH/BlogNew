@@ -22,6 +22,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
   education: {
@@ -32,16 +33,18 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
-  medicine: {
-    color: "#FFA100",
+  ophthalmology: {
+    color: "#8F4FFF",
     padding: "5px",
     padding: "5px 35px",
     width: "max-content",
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
   technology: {
@@ -52,6 +55,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
 }
@@ -63,8 +67,8 @@ export default function FullWidthGrid() {
       <h5 className="select_category">
         Select a Category to see more related content
       </h5>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={1} className="box">
+      <Box sx={{ flexGrow: 1 }} >
+        <Grid container spacing={1} width={{xs: '50%', sm:'100%'}} justifyContent={{md: 'center', sm: 'center', xs: 'center'}}  className="box" style={{marginLeft: "auto", marginRight: " auto"}}>
           <Grid item>
             <Link to="/news">
               {" "}
@@ -73,14 +77,7 @@ export default function FullWidthGrid() {
               </Cat>
             </Link>
           </Grid>
-          <Grid item>
-            <Link to="/education">
-              {" "}
-              <Cat itemID="grid_category-education" style={style.education}>
-                EDUCATION
-              </Cat>
-            </Link>
-          </Grid>
+          
           <Grid item>
             <Link to="/technology">
               {" "}
@@ -90,10 +87,10 @@ export default function FullWidthGrid() {
             </Link>
           </Grid>
           <Grid item>
-            <Link to="/medicine">
+            <Link to="/ophthalmology">
               {" "}
-              <Cat itemID="grid_category-medicine" style={style.medicine}>
-                MEDICINE
+              <Cat itemID="grid_category-ophthalmology" style={style.ophthalmology}>
+              OPHTHALMOLOGY
               </Cat>
             </Link>
           </Grid>

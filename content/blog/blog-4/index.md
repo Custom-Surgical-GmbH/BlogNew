@@ -1,71 +1,28 @@
 ---
-title: Custom Surgical in 2021
-date: 2022-04-06
-tags: ["Education"]
+title: Custom Surgical launches the MicroREC App
+date: 2020-11-25
+tags: ["Technology"]
 description: "Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was…"
-image: "./profile-pic.png"
+image: "./new-microrec-app.jpg"
+author: by Editor
 views: 900
 ---
 
-Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!
+In November 2020, Custom Surgical launched the MicroREC App, a unique mobile application for managing medical photos and videos.
+Earlier, Custom Surgical launched the MicroREC hardware solution for connecting diagnostic and surgical microscopic equipment to smartphones to capture high-quality imaging quickly and efficiently.
 
-<h2><b>January - strategizing</b></h2>
+The MicroREC system incorporates quality German lenses, innovative engineering, and additive manufacturing, with a modular design that allows doctors to customize the device and achieve <b>compatibility with most microscopy, slit lamps, and smartphones</b>.
 
-Our January started from a lovely post of doctor Ike Ahmed where he mentors his student doctor Ticiana de Francesco from the comfort of his own home. It was so inspiring to see how MicroREC can help in telemedicine and support our mission of improving patient coverage. Inspiration from doctor Ike Ahmed and other surgeons from all over the world motivated us to work even harder to complement our mission. In January, we set up our goals, decided on our strategy, and set up foundations for a few successful hires in our team.
+Adopted globally by medical professionals in over 30 countries, the MicroREC highlights the need for a software solution on smartphones tailored to the specific requirements for capturing microscopy imaging.
+The app enables doctors to capture images and videos from microscopes in the <b>vertical or horizontal format, no matter the system's positioning on the microscope equipment</b>.
 
-<h2><b>February - enabling e-commerce</b></h2>
+It allows them to <b>optimize the camera's settings for high-quality imaging depending on the lighting conditions</b> for each microscopy procedure and operating environment.
 
-In February, we were happy to welcome Marc Frigola to our team. Mark took over our digital sales and made customer experience online more comfortable and agile. Plus, we enabled online sales on our website - to give access to affordable MedTech to people from all over the world. It became much easier for customers from any country to purchase our product and for us - optimize access to our equipment.
+During COVID-19, medical professionals embraced digital solutions that allow collaborations and continuous medical education, making this app a valuable tool for <b>telemedicine, training, sharing on social media platforms, and presentations in webinars</b>.
 
-<h2><b>March - MicroREC Android app</h2></b>
+The app is now available for free on the iOS App Store, and it is scheduled to have an Android version released at the beginning of 2021.
 
-In March, we launched our Android app for MicroREC. The app was aimed to improve the shooting experience in operating rooms. Regular photo apps don’t allow you to adjust focus from fingers or instruments on pupils and mix up medical imagery with personal files in a camera roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
+<b>About Custom Surgical</b>
 
-Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!
+Custom Surgical is a MedTech company based in Germany and ranked in the top 50 of the fastest-growing startups out of over 16000 by Glassdollar in 2020. The company develops smartphone-based optical equipment to create affordable medical devices, with a mission to provide accessible innovation in healthcare globally.
 
-<h2><b>January - strategizing</b></h2>
-
-Our January started from a lovely post of doctor Ike Ahmed where he mentors his student doctor Ticiana de Francesco from the comfort of his own home. It was so inspiring to see how MicroREC can help in telemedicine and support our mission of improving patient coverage. Inspiration from doctor Ike Ahmed and other surgeons from all over the world motivated us to work even harder to complement our mission. In January, we set up our goals, decided on our strategy, and set up foundations for a few successful hires in our team.
-
-<h2><b>February - enabling e-commerce</b></h2>
-
-In February, we were happy to welcome Marc Frigola to our team. Mark took over our digital sales and made customer experience online more comfortable and agile. Plus, we enabled online sales on our website - to give access to affordable MedTech to people from all over the world. It became much easier for customers from any country to purchase our product and for us - optimize access to our equipment.
-
-<h2><b>March - MicroREC Android app</h2></b>
-
-In March, we launched our Android app for MicroREC. The app was aimed to improve the shooting experience in operating rooms. Regular photo apps don’t allow you to adjust focus from fingers or instruments on pupils and mix up medical imagery with personal files in a camera roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
-
-l Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
-
-Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!
-
-<h2><b>January - strategizing</b></h2>
-
-Our January started from a lovely post of doctor Ike Ahmed where he mentors his student doctor Ticiana de Francesco from the comfort of his own home. It was so inspiring to see how MicroREC can help in telemedicine and support our mission of improving patient coverage. Inspiration from doctor Ike Ahmed and other surgeons from all over the world motivated us to work even harder to complement our mission. In January, we set up our goals, decided on our strategy, and set up foundations for a few successful hires in our team.
-
-<h2><b>February - enabling e-commerce</b></h2>
-
-In February, we were happy to welcome Marc Frigola to our team. Mark took over our digital sales and made customer experience online more comfortable and agile. Plus, we enabled online sales on our website - to give access to affordable MedTech to people from all over the world. It became much easier for customers from any country to purchase our product and for us - optimize access to our equipment.
-
-<h2><b>March - MicroREC Android app</h2></b>
-
-roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
-
-l Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
-
-Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was very intense, full of growth and insights, and in general - successful. We grew up, strengthened our team, improved our systems and established many new connections. While we start 2022 on a firm note and wish everybody to make it your year, we’re so excited to sum up 2021 and review its highlights. Welcome to join us in that journey!
-
-<h2><b>January - strategizing</b></h2>
-
-Our January started from a lovely post of doctor Ike Ahmed where he mentors his student doctor Ticiana de Francesco from the comfort of his own home. It was so inspiring to see how MicroREC can help in telemedicine and support our mission of improving patient coverage. Inspiration from doctor Ike Ahmed and other surgeons from all over the world motivated us to work even harder to complement our mission. In January, we set up our goals, decided on our strategy, and set up foundations for a few successful hires in our team.
-
-<h2><b>February - enabling e-commerce</b></h2>
-
-In February, we were happy to welcome Marc Frigola to our team. Mark took over our digital sales and made customer experience online more comfortable and agile. Plus, we enabled online sales on our website - to give access to affordable MedTech to people from all over the world. It became much easier for customers from any country to purchase our product and for us - optimize access to our equipment.
-
-<h2><b>March - MicroREC Android app</h2></b>
-
-In March, we launched our Andr
-In March, we launched our Android app for MicroREC. The app was aimed to improve the shooting experience in operating rooms. Regular photo apps don’t allow you to adjust focus from fingers or instruments on pupils and mix up medical imagery with personal files in a camera roll. MicroREC app, only available on iOS, helped tackle this issue for Android users, too. Plus, we participated in START Global Competition, received the first MicroREC user cases from dentists, and welcomed a marketing manager Yuliia Zakutnia to our team - yay!
-
-![alt text](images/cute-dog.jpg "Cute dog")

@@ -79,14 +79,13 @@ const Top = ({ data1 }) => {
                 (tag, i) => [
                   <div key={i} className={
                     tag === "News"
-                      ? "tags-news"
-                      : tag === "Medicine"
-                      ? "tags-medicine"
-                      : tag === "Technology"
-                      ? "tags-technology"
-                      : tag === "Education"
-                      ? "tags-education"
-                      : "tags-news"
+                    ? "tags-news"
+                    : tag === "Ophthalmology"
+                    ? "tags-ophthalmology"
+                    : tag === "Technology"
+                    ? "tags-technology"
+                    
+                    : "tags-news"
                   }>
                     {tag}
                     {i <
@@ -135,6 +134,7 @@ const Top = ({ data1 }) => {
             key=""
             imgStyle={{
               borderRadius: "5px",
+              boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
             }}
             style={{
               borderRadius: "5px",
@@ -149,14 +149,13 @@ const Top = ({ data1 }) => {
                 (tag, i) => [
                   <div key={i} className={
                     tag === "News"
-                      ? "tags-news"
-                      : tag === "Medicine"
-                      ? "tags-medicine"
-                      : tag === "Technology"
-                      ? "tags-technology"
-                      : tag === "Education"
-                      ? "tags-education"
-                      : "tags-news"
+                                ? "tags-news"
+                                : tag === "Ophthalmology"
+                                ? "tags-ophthalmology"
+                                : tag === "Technology"
+                                ? "tags-technology"
+                                
+                                : "tags-news"
                   }>
                     {tag}
                     {i <
