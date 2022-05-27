@@ -66,7 +66,8 @@ const BlogIndex = ({ data, location }) => {
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }}                
+         justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
@@ -77,10 +78,6 @@ const BlogIndex = ({ data, location }) => {
                 md={4}
                 sm={6}
                 key={post.fields.slug}
-                style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
               >
                 <article
                   className="post-list-item"
@@ -95,6 +92,7 @@ const BlogIndex = ({ data, location }) => {
                         key=""
                         imgStyle={{
                           borderRadius: "5px",
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
                         }}
                         style={{
                           borderRadius: "5px",

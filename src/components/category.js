@@ -22,6 +22,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
   education: {
@@ -32,6 +33,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
   ophthalmology: {
@@ -42,6 +44,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
   technology: {
@@ -52,6 +55,7 @@ const style = {
     borderRadius: "5px",
     textAlign: "center",
     fontSize: "16px",
+    width: "200px",
     textTransform: "uppercase",
   },
 }
@@ -63,8 +67,8 @@ export default function FullWidthGrid() {
       <h5 className="select_category">
         Select a Category to see more related content
       </h5>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={1} className="box">
+      <Box sx={{ flexGrow: 1 }} >
+        <Grid container spacing={1} width={{sm: '50%', md:'100%'}}  className="box" style={{marginLeft: "auto", marginRight: " auto"}}>
           <Grid item>
             <Link to="/news">
               {" "}

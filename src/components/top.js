@@ -134,6 +134,7 @@ const Top = ({ data1 }) => {
             key=""
             imgStyle={{
               borderRadius: "5px",
+              boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
             }}
             style={{
               borderRadius: "5px",

@@ -675,7 +675,7 @@ a{
 
 .photo_margin{
   margin-bottom: 10%;
-  max-width: 800px;
+  max-width: 650px;
  
 }
 .prev{
@@ -859,6 +859,15 @@ svg{
 .post-meta-share-icons button:last-child {
   margin-right: 0;
 }
+
+.input_email{
+  background: #F9F9F9;
+  border-radius: 5px;
+  padding: 10px 30px;
+  border: 1px;
+  margin-top: 8%;
+  margin-right: 3%;
+}
 /* Media queries */
 
 
@@ -886,6 +895,25 @@ svg{
   .banner_text{
     margin-right: 5%;
  }
+ .sub_text{
+   font-size: 24px;
+ }
+ .sub_small{
+   font-size: 16px;
+ }
+ .input_email{
+   padding: 10px 0px;
+ }
+}
+
+@media (max-width: 900px){
+  .banner_text{
+    width: 50%;
+    margin-top: 10%;
+  }
+  .category{
+    width: 90%;
+  }
 }
 
 @media (max-width: 800px){
@@ -906,10 +934,59 @@ svg{
    margin-left: auto;
    margin-right: auto;
  }
+
+ .flex_post{
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  margin-top: 0%; 
+  flex-direction: column;
+ }
+ .blog_left{
+  width: 90%;
+  margin-left: auto;
+  order: 2;
+  /* text-align: center; */
+  margin-right: auto;
+  margin-bottom: 10%;
+ }
+ .photo_margin{
+   order: 1;
+   max-width: 100%;
+ }
+ .article{
+   width: 90%;
+ }
 }
 
 @media (max-width: 600px){
   footer{
-    padding: 80px;
+    padding: 40px 10px;
+    font-size: 14px;
+  }
+  .banner_text{
+    margin-right: auto;
+    width: 80%;
+    margin-top: 80%;
+    text-align: center;
+  }
+  .banner{
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px){
+  .sub_text{
+    font-size: 18px;
+  }
+  .sub_small{
+    font-size: 14px;
+  }
+  .input_email{
+    font-size: 14px;
+    width: 50%;
+    margin-right: 0;
   }
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import sub_mobile from "/src/images/sub_mobile.svg"
 import sub from "/src/images/sub.svg"
+import { Box } from "@mui/material"
 import Alert from "@mui/material/Alert"
 import AlertTitle from "@mui/material/AlertTitle"
 
@@ -80,31 +82,24 @@ const SubscriptionBanner = ({ postName, tag, ...props }) => {
     // but you can do whatever you want
   }
   return (
+    <>
+    <Box display={{xs:'none', sm: 'block'}}>
     <div className="banner">
       <img src={sub} className="sub"></img>
       <div className="banner_text">
         <div className="sub_text">SUBSCRIBE TO OUR NEWSLETTER</div>
         <div className="sub_small">
-          Discover how to get the best-recording settings, news, and exclusive
-          discounts!
+          Discover how to get the best-recording settings, news, and exclusive&nbsp;discounts!
         </div>
         <div className="sub_form">
           <form onSubmit={handleSubmit}>
-            <input
+            <input className="input_email"
               type="text"
               placeholder="Your Email"
               value={inputEmail}
               onInput={e => setInputEmail(e.target.value)}
               name="email"
               required
-              style={{
-                background: "#F9F9F9",
-                borderRadius: "5px",
-                padding: "10px 30px",
-                border: "1px",
-                marginTop: "8%",
-                marginRight: "3%",
-              }}
             ></input>
             <input
               type="submit"
@@ -137,6 +132,58 @@ const SubscriptionBanner = ({ postName, tag, ...props }) => {
         </div>
       </div>
     </div>
+    </Box>
+    <Box display={{xs:'block', sm: 'none'}}>
+    <div className="banner">
+      <img src={sub_mobile} className="sub"></img>
+      <div className="banner_text">
+        <div className="sub_text">SUBSCRIBE TO OUR NEWSLETTER</div>
+        <div className="sub_small">
+          Discover how to get the best-recording settings, news, and exclusive
+          discounts!
+        </div>
+        <div className="sub_form">
+          <form onSubmit={handleSubmit}>
+            <input className="input_email"
+              type="text"
+              placeholder="Your Email"
+              value={inputEmail}
+              onInput={e => setInputEmail(e.target.value)}
+              name="email"
+              required
+            ></input>
+            <input
+              type="submit"
+              value="Subscribe"
+              style={{
+                background: "#FFA100",
+                boxShadow:
+                  "0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12)",
+                borderRadius: "5px",
+                padding: "10px 30px",
+                fontWeight: "500",
+                fontSize: "14px",
+                border: "1px",
+                color: "white",
+              }}
+            ></input>
+          </form>
+          <span style={{ color: "red" }}>{emailError}</span>
+          {showAlert === null ? null : showAlert ? (
+            <Alert severity="success" marginTop={2}>
+              <AlertTitle>Done! </AlertTitle>
+              {showAlertMessage}
+            </Alert>
+          ) : (
+            <Alert severity="error" marginTop={2}>
+              <AlertTitle>Error</AlertTitle>
+              {showAlertMessage}
+            </Alert>
+          )}
+        </div>
+      </div>
+    </div>
+    </Box></>
   )
 }
 

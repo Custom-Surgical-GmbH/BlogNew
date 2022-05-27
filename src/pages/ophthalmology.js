@@ -87,10 +87,7 @@ const BlogIndex = ({ data, location }) => {
                 md={4}
                 sm={6}
                 key={post.fields.slug}
-                style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
+                
               >
                 <article
                   className="post-list-item"
@@ -105,6 +102,7 @@ const BlogIndex = ({ data, location }) => {
                         key=""
                         imgStyle={{
                           borderRadius: "5px",
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
                         }}
                         style={{
                           borderRadius: "5px",

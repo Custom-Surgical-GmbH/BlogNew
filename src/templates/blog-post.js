@@ -27,7 +27,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const url = typeof window !== "undefined" ? window.location.href : ""
 
   const [items, setItems] = useState([])
-  const [visible, setVisible] = useState(6)
+  const [visible, setVisible] = useState(3)
 
   console.log(data)
 
@@ -104,6 +104,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 key=" "
                 imgStyle={{
                   borderRadius: "5px",
+                  boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
                 }}
                 style={{
                   maxHeight: "550px",
@@ -216,8 +217,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 key={post.fields.slug}
                 style={{
                   width: "80%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
+                  
                 }}
               >
                 <article
@@ -233,6 +233,7 @@ const BlogPostTemplate = ({ data, location }) => {
                         key=""
                         imgStyle={{
                           borderRadius: "5px",
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
                         }}
                         style={{
                           borderRadius: "5px",
