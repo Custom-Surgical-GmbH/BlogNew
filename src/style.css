@@ -518,13 +518,14 @@ a {
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
-  margin-top: 5%;
+  padding-top: 5%;
 }
 
 .article{
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5%;
 }
 
 .timer{
@@ -823,6 +824,20 @@ svg{
   height: 30px;
 }
 
+.post-meta-share-icons-white {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.post-meta-share-icons-white button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  transition: all 0.2s ease-out;
+}
+
+
 .sharing_icon{
   display: flex;
   font-size: 20px;
@@ -857,6 +872,22 @@ svg{
 }
 
 .post-meta-share-icons button:last-child {
+  margin-right: 0;
+}
+
+.post-meta-share-icons-white svg {
+  color: var(--theme-ui-colors-secondary, #fff);
+}
+
+.post-meta-share-icons-white button:hover {
+  transform: scale(1.15);
+}
+
+.post-meta-share-icons-white button:focus {
+  outline: 0;
+}
+
+.post-meta-share-icons-white button:last-child {
   margin-right: 0;
 }
 
@@ -963,8 +994,14 @@ svg{
   .top{
     display: block;
   }
+  .global-header {
+    padding: 20px 20px;
+}
+  .post-list-item{
+    width: 100%;
+  }
   .flex_blocks{
-   width: 80%;
+   width: 90%;
    margin-bottom: 5%;
  }
  .bio{
@@ -984,7 +1021,7 @@ svg{
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
-  margin-top: 0%; 
+  padding-top: 0%; 
   flex-direction: column;
  }
  .blog_left{
@@ -1022,7 +1059,7 @@ svg{
     align-items: center;
   }
   .blog-post-nav{
-    width: 90%;
+    width: 70%;
   }
   .prev{
     font-size: 14px;

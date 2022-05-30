@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import SubscriptionBanner from "../components/banner"
-
 import ShareButtons from "../components/share"
+import ShareButtonsWhite from "../components/share_white"
 
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
@@ -42,18 +42,18 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <header style={{backgroundColor: "#202026"}}>
           <div className="flex_post">
             <div className="blog_left">
               <Link
                 className="header-link-home"
                 to="/"
-                style={{ color: "black" }}
+                style={{ color: "white" }}
               >
                 &#8592;Blog
               </Link>
 
-              <h2 style={{ marginBottom: "15%" }} itemProp="headline">
+              <h2 style={{ marginBottom: "15%", color: "white" }} itemProp="headline">
                 {post.frontmatter.title}
               </h2>
               <div>
@@ -77,21 +77,21 @@ const BlogPostTemplate = ({ data, location }) => {
                 ])}
               </div>
 
-              <div style={{ marginTop: "5%" }}>{post.frontmatter.date}</div>
+              <div style={{ marginTop: "5%", color: "white" }}>{post.frontmatter.date}</div>
               <div
                 style={{
                   marginTop: "5%",
                   fontWeight: "bold",
-                  fontSize: "20px",
+                  fontSize: "20px", color: "white"
                 }}
               >
                 {post.frontmatter.author}
               </div>
 
-              <div className="sharing_icon">
+              <div className="sharing_icon" style={{color: "white"}}>
                 {" "}
                 Share
-                <ShareButtons
+                <ShareButtonsWhite
                   url={url}
                   title={post.frontmatter.title}
                   description={post.frontmatter.description}
@@ -131,23 +131,23 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li
             style={{
-              width: "45%",
+              width: "45%", display: "flex", justifyContent: "flex-start"
             }}
           >
             {previous && (
               <Link to={previous.fields.slug} rel="prev" className="prev">
-                &#10094; {previous.frontmatter.title}
+                &#10094; Previous
               </Link>
             )}
           </li>
           <li
             style={{
-              width: "45%",
+              width: "45%", display: "flex", justifyContent: "flex-end"
             }}
           >
             {next && (
               <Link to={next.fields.slug} rel="next" className="prev">
-                {next.frontmatter.title} &#10095;
+                Next &#10095;
               </Link>
             )}
           </li>
