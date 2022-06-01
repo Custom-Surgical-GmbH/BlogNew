@@ -2,9 +2,9 @@
 title: Custom Surgical launches the MicroREC App
 date: 2020-11-25
 tags: ["Technology"]
-description: "Custom Surgical is finishing 2021 with 13 team members, distributors in 22 countries and customers in more than 50 countries. Our year was…"
+description: "CCustom Surgical launched an app for ophthalmologists who needs to record microscope imaging in high-quality. Get to know what is behind this. "
 image: "./new-microrec-app.jpg"
-author: by Editor
+author: by Maria-Cristina V.
 views: 900
 ---
 
@@ -25,4 +25,3 @@ The app is now available for free on the iOS App Store, and it is scheduled to h
 <b>About Custom Surgical</b>
 
 Custom Surgical is a MedTech company based in Germany and ranked in the top 50 of the fastest-growing startups out of over 16000 by Glassdollar in 2020. The company develops smartphone-based optical equipment to create affordable medical devices, with a mission to provide accessible innovation in healthcare globally.
-
