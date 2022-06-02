@@ -12,12 +12,25 @@ import SubscriptionBanner from "../components/banner"
 import { Box, Grid, Alert } from "@mui/material"
 import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
+import MyCustomBreadcrumb from "../components/breadcrumbs"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
+import { style } from "@mui/system";
 // Test
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
+
+
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: "Blog",
+    
+    crumbSeparator: " > ",
+    crumbStyle: { color: "#666" },
+    crumbActiveStyle: { color: "orange" },
+  })
 
   const showMoreItems = () => {
     if (data.allMarkdownRemark.totalCount > visible) {
@@ -56,8 +69,11 @@ const BlogIndex = ({ data, location }) => {
         <div>Most viewed</div>
         <hr className="line"></hr>
       </div>
+      
       <Top />
       <Cat />
+     
+    
       <div className="viewed">
         <div>Recent Articles</div>
         <hr style={{ margin: 0 }}></hr>

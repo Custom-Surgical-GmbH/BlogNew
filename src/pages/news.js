@@ -9,11 +9,21 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
+import MyCustomBreadcrumb from "../components/breadcrumbs"
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
+
+
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: "News",
+    crumbSeparator: " > ",
+  
+  })
 
   const showMoreItems = () => {
     if (data.allMarkdownRemark.totalCount > visible) {
@@ -32,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
   header = <img style={{ width: "50px" }} src={logo} alt="Logo" />
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title={siteTitle} crumbLabel="News">
         <Seo title="All posts" />
 
         <p>
@@ -61,6 +71,7 @@ const BlogIndex = ({ data, location }) => {
         >
           News
         </div>
+        <MyCustomBreadcrumb crumbs={crumbs} />
         <div
           style={{
             fontWeight: "500",

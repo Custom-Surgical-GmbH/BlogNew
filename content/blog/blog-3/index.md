@@ -2,7 +2,7 @@
 title: How to democratize medical technology
 date: 2021-07-19
 tags: ["Technology"]
-description: "Suppose you’re based in one of a developing country, or you’re a young surgeon starting your practice. In that case, you might have experienced a <b>typical problem with accessibility to medical equipment</b> and MedTech innovation…"
+description: "Suppose you’re based in one of a developing country, or you’re a young surgeon starting your practice. In that case, you might have experienced a typical problem with accessibility to medical equipment and MedTech innovation…"
 image: "./dakar_fundacionbarraquer.jpg"
 author: by Editor
 views: 900

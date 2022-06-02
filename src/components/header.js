@@ -9,7 +9,7 @@ export default function Header() {
     return (
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {CustomSurgicalLogo}
-        <button className="shop" href="https://store.customsurgical.co/">Shop now</button>
+        <button className="shop"><a href="https://store.customsurgical.co/" style={{color: "white"}}>Shop now</a></button>
       </Toolbar>
     );
   };

@@ -33,6 +33,10 @@ require("dotenv").config({
     //   }
     // },  
     {
+      resolve: `gatsby-plugin-breadcrumb`,
+  
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

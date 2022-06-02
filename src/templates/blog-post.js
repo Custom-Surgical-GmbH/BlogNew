@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import SubscriptionBanner from "../components/banner"
 import ShareButtons from "../components/share"
 import ShareButtonsWhite from "../components/share_white"
@@ -25,6 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const { previous, next } = data
   const url = typeof window !== "undefined" ? window.location.href : ""
+  
 
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
@@ -42,16 +43,14 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header style={{backgroundColor: "#202026"}}>
+        <header style={{backgroundColor: "#202026"}}> <Breadcrumb location={location} crumbLabel={post.frontmatter.title} />
           <div className="flex_post">
+         
             <div className="blog_left">
-              <Link
-                className="header-link-home"
-                to="/"
-                style={{ color: "white" }}
-              >
-                &#8592;Blog
-              </Link>
+              
+
+             
+
 
               <h2 style={{ marginBottom: "15%", color: "white" }} itemProp="headline">
                 {post.frontmatter.title}
