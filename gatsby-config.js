@@ -14,6 +14,7 @@ require("dotenv").config({
       twitter: ` `,
     },
   },
+
   plugins: [
     `gatsby-plugin-image`,
     {
@@ -23,6 +24,14 @@ require("dotenv").config({
         name: `blog`,
       },
     },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /images/ // See below to configure properly
+    //     }
+    //   }
+    // },  
     {
       resolve: `gatsby-source-filesystem`,
       options: {

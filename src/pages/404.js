@@ -12,11 +12,7 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       
-      <div className="header_logo">
-        <Link className="header-link-home" to="/">
-          <header className="global-header">{header}</header>{" "}
-        </Link>
-      </div>
+      
       <Seo title="Page not found - Custom Surgical" />
       <div style={{
         maxWidth: "100%",
@@ -24,6 +20,7 @@ const NotFoundPage = ({ data, location }) => {
         paddingLeft: "20px",
         display: "flex",
         flexDirection: "column",
+        marginTop: "5em",
         alignItems: "center"
       }}><h1 className="h1_error">Ooops!</h1>
      

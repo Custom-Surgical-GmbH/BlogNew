@@ -2,6 +2,7 @@ import * as React from "react"
 import CookieConsent, { Cookies } from "react-cookie-consent"
 import { useLocation } from "@reach/router" // this helps tracking the location
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
+import Header from "./header"
 
 const styles = {
   buttonStyle: {
@@ -43,6 +44,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <Header/>
       <main>{children}</main>
       <CookieConsent
         // debug={true}

@@ -46,14 +46,10 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="header_logo">
-        <Link className="header-link-home" to="/">
-          <header className="global-header">{header}</header>{" "}
-        </Link>
-      </div>
+      
       <Seo title="All posts" />
 
-      <div className="viewed" style={{ width: "90%" }}>
+      <div className="viewed" style={{ width: "90%", marginTop: "5em" }}>
         <div
           style={{
             color: "#00C5B7",

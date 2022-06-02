@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-
+import "@fontsource/red-hat-display";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Top from "../components/top"
 import Bio from "../components/bio"
@@ -48,11 +49,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="header_logo">
-        <Link className="header-link-home" to="/">
-          <header className="global-header">{header}</header>{" "}
-        </Link>
-      </div>
+    
       <Seo title="MedTech Blog" />
       <Bio />
       <div className="viewed">

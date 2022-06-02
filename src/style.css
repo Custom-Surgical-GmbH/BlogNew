@@ -518,7 +518,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
-  padding-top: 5%;
+  padding-top: 10em;
 }
 
 .article{
@@ -625,7 +625,7 @@ a {
 }
 
 .bio{
-  padding-top: 2%;
+  padding-top: 8em;
   padding-right: 5%;
 }
 
@@ -941,6 +941,27 @@ svg{
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.shop{
+  background: rgb(255 161 0);
+  padding: 10px 25px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shop:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+  transition: 0.3s all;
 }
 /* Media queries */
 
