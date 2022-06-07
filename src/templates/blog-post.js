@@ -80,8 +80,8 @@ const BlogPostTemplate = ({ data, location }) => {
               <div
                 style={{
                   marginTop: "5%",
-                  fontWeight: "bold",
-                  fontSize: "20px", color: "white"
+                  fontSize: "16px", 
+                  color: "white"
                 }}
               >
                 {post.frontmatter.author}

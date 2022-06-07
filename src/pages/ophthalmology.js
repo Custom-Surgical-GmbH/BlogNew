@@ -55,7 +55,7 @@ const BlogIndex = ({ data, location }) => {
       
       <Seo title="All posts" />
      
-      <div className="viewed" style={{ width: "90%", marginTop: "5em"  }}>
+      <div className="viewed" style={{ width: "90%", paddingTop: "5em"  }}>
         <div
           style={{
             color: "#8F4FFF",

@@ -1036,6 +1036,99 @@ position: absolute;
 span.breadcrumb__separator span.breadcrumb__separator::before {
   content: ">";
 }
+
+.nav_menu{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 4em;
+}
+
+.nav_link{
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav_link:hover{
+  color: rgb(255, 161, 0);
+  transition: 0.3s all;
+}
+
+
+/*Burger*/
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: relative;
+  right: 36px;
+  margin-top: 50%;
+  width: 36px;
+  height: 30px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fff;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: rgb(255, 161, 0);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0px;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+a.bm-item a.menu-item{
+  color: #fff;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
 /* Media queries */
 
 
@@ -1090,6 +1183,13 @@ span.breadcrumb__separator span.breadcrumb__separator::before {
   }
   .global-header {
     padding: 20px 20px;
+}
+.css-1im6ja8-MuiToolbar-root{
+  padding: 0;
+}
+.nav_menu{
+    
+    margin-right: 3em;
 }
   .post-list-item{
     width: 100%;
@@ -1148,6 +1248,9 @@ span.breadcrumb__separator span.breadcrumb__separator::before {
     width: 80%;
     margin-top: 80%;
     text-align: center;
+  }
+  .bio{
+    padding-top: 5em;
   }
   .banner{
     align-items: center;

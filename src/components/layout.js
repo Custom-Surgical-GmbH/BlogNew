@@ -3,6 +3,8 @@ import CookieConsent, { Cookies } from "react-cookie-consent"
 import { useLocation } from "@reach/router" // this helps tracking the location
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
 import Header from "./header"
+import { Box } from "@mui/material"
+import Humburger from "../components/humburger"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
 const styles = {
@@ -45,7 +47,9 @@ const Layout = ({ location, title, children, crumbLabel }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <Header/>
+     <Box display={{xs:'none', sm: 'block'}}>
+       <Header/></Box>
+       <Box display={{xs:'block', sm: 'none'}}><Humburger/></Box> 
       <main>{children} </main>
       <CookieConsent
         // debug={true}
