@@ -58,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
       
       <Seo title="All posts" />
 
-      <div className="viewed" style={{ width: "90%", paddingTop: "5em" }}>
+      <div className="viewed" style={{ width: "90%", paddingTop: "3em" }}>
         <div
           style={{
             color: "#00C5B7",
@@ -83,7 +83,7 @@ const BlogIndex = ({ data, location }) => {
         <hr style={{ margin: 0 }}></hr>
       </div>
 
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} style={{marginLeft: "72px", marginRight: "72px"}}>
         <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
@@ -98,6 +98,7 @@ const BlogIndex = ({ data, location }) => {
                 
               >
                 <article
+                style={{width: "100%"}}
                   className="post-list-item"
                   itemScope
                   itemType="http://schema.org/Article"
