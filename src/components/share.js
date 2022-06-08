@@ -18,7 +18,7 @@ return(
     </LinkedinShareButton>
 
     <TwitterShareButton url={url} title={description}>
-      <Twitter strokeWidth={1.25} />
+      <Twitter strokeWidth={1.25}  />
     </TwitterShareButton>
 
     

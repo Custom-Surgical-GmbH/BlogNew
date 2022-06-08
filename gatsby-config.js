@@ -8,8 +8,8 @@ require("dotenv").config({
       name: ` `,
       summary: ` `,
     },
-    description: ` `,
-    siteUrl: `https://customsurgical.co/blog/`,
+    description: ` Latest company updates, documentations, MedTech news and trends, and much more. Check out our blog and subscribe to our email in order to be ...    `,
+    siteUrl: `https://blog.customsurgical.co/`,
     social: {
       twitter: ` `,
     },

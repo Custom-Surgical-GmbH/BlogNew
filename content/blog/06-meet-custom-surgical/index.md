@@ -2,7 +2,7 @@
 title: Meet Custom Surgical and its transformation on access to healthcare worldwide
 date: 2022-06-06
 tags: ["Technology"]
-description: "Imagine a world with democratic access to healthcare, where anyone can get access to proper optical imaging consultation. Did you imagine? So did we"
+description: "Imagine a world with democratic access to healthcare, where anyone can get access to proper optical imaging consultation. Did you imagine? So did we!"
 image: "./shooting1.jpg"
 views: 900
 author: by Stephanie Ramos
