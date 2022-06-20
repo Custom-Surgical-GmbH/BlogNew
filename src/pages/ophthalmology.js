@@ -80,7 +80,7 @@ const BlogIndex = ({ data, location }) => {
         <hr style={{ margin: 0 }}></hr>
       </div>
 
-      <Box sx={{ flexGrow: 1 }} style={{marginLeft: "72px", marginRight: "72px"}}>
+      <Box sx={{ flexGrow: 1 }} marginLeft={{sm: "72px" , xs: "0px"}} marginRight={{sm: "72px" , xs: "0px"}}>
         <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug

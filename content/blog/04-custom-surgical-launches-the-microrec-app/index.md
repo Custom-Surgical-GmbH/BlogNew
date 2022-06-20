@@ -2,7 +2,7 @@
 title: Custom Surgical launches the MicroREC App
 date: 2020-11-25
 tags: ["Technology"]
-description: "CCustom Surgical launched an app for ophthalmologists who needs to record microscope imaging in high-quality. Get to know what is behind this. "
+description: "Custom Surgical launched an app for ophthalmologists who needs to record microscope imaging in high-quality. Get to know what is behind this. "
 image: "./new-microrec-app.jpg"
 author: by Maria-Cristina V.
 views: 900
