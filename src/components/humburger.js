@@ -11,7 +11,7 @@ const CustomSurgicalLogo = (
       <Typography variant="h6" component="h1" style={{display: "flex",
     alignItems: "center"}}>
         {/* <LogoSvg /> */}
-        <img src={LogoSvg} style={{width:"150px", height:"auto", marginLeft: "1em"}}></img>
+        <img src={LogoSvg} style={{width:"150px", height:"auto", marginLeft: "1em"}} alt="logo"></img>
       </Typography>
     </Link>
   );

@@ -55,6 +55,7 @@ const Bio = post => {
               ><GatsbyImage
         image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
         key=""
+        alt={data.allMarkdownRemark.nodes[0].frontmatter.title}
         imgStyle={{
           borderRadius: "5px",
         }}
@@ -94,10 +95,10 @@ const Bio = post => {
         <Link
                 to={data.allMarkdownRemark.nodes[0].fields.slug}
                 itemProp="url"
-              ><h2 style={{ color: "white" }}>
+              ><h1 style={{ color: "white" }}>
             {" "}
             {data.allMarkdownRemark.nodes[0].frontmatter.title}
-          </h2></Link>
+          </h1></Link>
         </div>
         <p style={{ color: "white" }}>
           {data.allMarkdownRemark.nodes[0].frontmatter.description}

@@ -52,9 +52,9 @@ const BlogPostTemplate = ({ data, location }) => {
              
 
 
-              <h2 style={{ marginBottom: "15%", color: "white" }} itemProp="headline">
+              <h1 style={{ marginBottom: "15%", color: "white" }} itemProp="headline">
                 {post.frontmatter.title}
-              </h2>
+              </h1>
               <div>
                 {post.frontmatter.tags.map((tag, i) => [
                   <div
@@ -101,6 +101,7 @@ const BlogPostTemplate = ({ data, location }) => {
               <GatsbyImage
                 image={getImage(post.frontmatter.image)}
                 key=" "
+                alt={post.frontmatter.title}
                 imgStyle={{
                   borderRadius: "5px",
                   boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
@@ -214,6 +215,7 @@ const BlogPostTemplate = ({ data, location }) => {
                       <GatsbyImage
                         image={getImage(post.frontmatter.image)}
                         key=""
+                        alt={title}
                         imgStyle={{
                           borderRadius: "5px",
                           boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
@@ -232,7 +234,7 @@ const BlogPostTemplate = ({ data, location }) => {
                           formats={["auto", "webp", "avif"]}
                           src="../images/timer.png"
                           quality={100}
-                          alt="Profile picture"
+                          alt="timer image"
                         />
                         <div className="timeread">
                           &#160;{post.timeToRead} mins
@@ -240,7 +242,7 @@ const BlogPostTemplate = ({ data, location }) => {
                       </div>
                     </div>
 
-                    <h2 className="h2_arc">
+                    <h1 className="h2_arc">
                       <Link
                         to={post.fields.slug}
                         itemProp="url"
@@ -248,7 +250,7 @@ const BlogPostTemplate = ({ data, location }) => {
                       >
                         {title}
                       </Link>
-                    </h2>
+                    </h1>
 
                     <div></div>
                   </header>

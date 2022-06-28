@@ -25,7 +25,7 @@ export default function Header() {
       <Typography variant="h6" component="h1" style={{display: "flex",
     alignItems: "center"}}>
         {/* <LogoSvg /> */}
-        <img src={LogoSvg} style={{width:"150px", height:"auto"}}></img>
+        <img src={LogoSvg} style={{width:"150px", height:"auto"}} alt="logo"></img>
       </Typography>
     </Link>
   );

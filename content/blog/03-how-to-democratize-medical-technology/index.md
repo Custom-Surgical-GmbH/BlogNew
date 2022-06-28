@@ -25,7 +25,7 @@ Then, after the development, the sales force comes into action. It focuses on un
 
 Since practitioners encounter situations in developing countries differ vastly from problems present in rich countries, they can only adopt and adapt medical technology that doesn’t fully address their needs.
 
-<h2><b>What problems are present in developing countries?</h2></b>
+<h1><b>What problems are present in developing countries?</h1></b>
 
 There are two main challenges. First of all, the coverage for the diagnosis is a lot reduced than it is in wealthier countries. Two main reasons cause it: <b>(1) the third countries don’t have proper medical technology and (2) there is a lower number of trained specialists.</b>
 

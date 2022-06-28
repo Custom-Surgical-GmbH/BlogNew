@@ -14,7 +14,7 @@ With smart, innovative technologies like the MicroREC, medical education for mic
 
 MicroREC connects microscopes to smartphones. Doctors can use the phone’s apps to join online events and share live high-quality imaging. The doctor capturing the imaging can share his phone’s screen, and all participants in the online event can visualize the procedure.
 
-This innovative approach was adapted by <a href="https://oftalmouniversity.com/" target="t_blank">Oftalmo University</a>. They created a blended hybrid education system with the physical and online campuses coming together and <b>hundreds of doctors worldwide joining live webinars and streamings</b>.
+This innovative approach was adapted by <a href="https://oftalmouniversity.com/" class="links_post" target="t_blank">Oftalmo University</a>. They created a blended hybrid education system with the physical and online campuses coming together and <b>hundreds of doctors worldwide joining live webinars and streamings</b>.
 
 When doctors or instructors stream imaging with a patient, they can mute all the participants in a webinar and manage their interaction after the procedure.
 

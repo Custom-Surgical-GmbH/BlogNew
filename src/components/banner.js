@@ -85,7 +85,7 @@ const SubscriptionBanner = ({ postName, tag, ...props }) => {
     <>
     <Box display={{xs:'none', sm: 'block'}}>
     <div className="banner">
-      <img src={sub} className="sub"></img>
+      <img src={sub} className="sub" alt="Image of baner"></img>
       <div className="banner_text">
         <div className="sub_text">SUBSCRIBE TO OUR NEWSLETTER</div>
         <div className="sub_small">
@@ -135,7 +135,7 @@ const SubscriptionBanner = ({ postName, tag, ...props }) => {
     </Box>
     <Box display={{xs:'block', sm: 'none'}}>
     <div className="banner">
-      <img src={sub_mobile} className="sub"></img>
+      <img src={sub_mobile} className="sub" alt="Image of baner"></img>
       <div className="banner_text">
         <div className="sub_text">SUBSCRIBE TO OUR NEWSLETTER</div>
         <div className="sub_small">

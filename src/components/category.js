@@ -94,13 +94,24 @@ export default function FullWidthGrid() {
             </Link>
           </Grid>
           <Grid item>
-            <Link to="/ophthalmology">
+            <Link to="/stories">
               {" "}
               <Cat
                 itemID="grid_category-ophthalmology"
                 style={style.ophthalmology}
               >
-                OPHTHALMOLOGY
+                STORIES
+              </Cat>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/how-to">
+              {" "}
+              <Cat
+                itemID="grid_category-news"
+                style={style.news}
+              >
+                HOW TO
               </Cat>
             </Link>
           </Grid>
