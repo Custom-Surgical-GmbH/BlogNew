@@ -17,12 +17,10 @@ const BlogIndex = ({ data, location }) => {
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
 
-
   const { crumbs } = useBreadcrumb({
     location,
     crumbLabel: "How to",
     crumbSeparator: " > ",
-  
   })
 
   const showMoreItems = () => {
@@ -56,10 +54,9 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-     
       <Seo title="All posts" />
 
-      <div className="viewed" style={{ width: "90%", paddingTop: "3em"  }}>
+      <div className="viewed" style={{ width: "90%", paddingTop: "3em" }}>
         <div
           style={{
             color: "#FFA100",
@@ -78,27 +75,27 @@ const BlogIndex = ({ data, location }) => {
             marginBottom: "1%",
             fontSize: "20px",
           }}
-        >
-          
-        </div>
+        ></div>
         <hr style={{ margin: 0 }}></hr>
       </div>
 
-      <Box sx={{ flexGrow: 1 }} marginLeft={{sm: "72px" , xs: "0px"}} marginRight={{sm: "72px" , xs: "0px"}}>
-        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
+      <Box
+        sx={{ flexGrow: 1 }}
+        marginLeft={{ sm: "72px", xs: "0px" }}
+        marginRight={{ sm: "72px", xs: "0px" }}
+      >
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          justifyContent={{ xs: "center", sm: "flex-start" }}
+        >
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
             return (
-              <Grid
-                item
-                xs={10}
-                md={4}
-                sm={6}
-                key={post.fields.slug}
-                
-              >
-                <article style={{width: "100%"}}
+              <Grid item xs={10} md={4} sm={6} key={post.fields.slug}>
+                <article
+                  style={{ width: "100%" }}
                   className="post-list-item"
                   itemScope
                   itemType="http://schema.org/Article"
@@ -112,7 +109,7 @@ const BlogIndex = ({ data, location }) => {
                         alt={title}
                         imgStyle={{
                           borderRadius: "5px",
-                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                         }}
                         style={{
                           borderRadius: "5px",
