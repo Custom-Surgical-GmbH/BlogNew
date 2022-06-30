@@ -36,7 +36,7 @@ const BlogPostTemplate = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={post.frontmatter.description}
       />
       <article
         className="blog-post"
@@ -257,7 +257,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.description || post.excerpt,
+                        __html: post.description ,
                       }}
                       itemProp="description"
                     />

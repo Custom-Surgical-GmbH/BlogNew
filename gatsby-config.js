@@ -2,14 +2,17 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
-  siteMetadata: {
+pathPrefix: `/blog`,
+assetPrefix: `https://blog.customsurgical.co/blog`,
+  siteMetadata: { 
+    
     title: `Custom Surgical`,
     author: {
       name: ` `,
       summary: ` `,
     },
     description: ` Latest company updates, documentations, MedTech news and trends, and much more. Check out our blog and subscribe to our email in order to be ...    `,
-    siteUrl: `https://blog.customsurgical.co/`,
+    siteUrl: `https://blog.customsurgical.co/blog`,
     social: {
       twitter: ` `,
     },
@@ -17,6 +20,7 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -53,16 +57,22 @@ module.exports = {
               maxWidth: 630,
             },
           },
+          
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-instagram-embed',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              width: 320,
+              height: 320,
             },
+          }, {
+           resolve: `gatsby-remark-responsive-iframe`,
+            
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+       
       },
     },
     {
@@ -123,7 +133,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                  description: node.frontmatter.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -212,5 +222,9 @@ module.exports = {
     //     ],
     //   },
     // },
+
+
+
+   
   ],
 }

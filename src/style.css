@@ -1170,6 +1170,11 @@ a.bm-item a.menu-item{
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), -webkit-transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.gatsby-resp-iframe-wrapper{
+max-width: 100%;
+
+}
+
 /* Media queries */
 
 
@@ -1317,6 +1322,7 @@ a.bm-item a.menu-item{
   .breadcrumb{
 padding-left: 10px;
   }
+  
 }
 
 @media (max-width: 420px){
@@ -1331,4 +1337,5 @@ padding-left: 10px;
     width: 50%;
     margin-right: 0;
   }
+  
 }

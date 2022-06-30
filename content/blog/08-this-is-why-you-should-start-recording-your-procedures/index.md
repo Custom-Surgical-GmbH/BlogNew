@@ -18,16 +18,27 @@ Are you trying to explain to your patients how procedures like cataract surgery 
 
 It's also great for patients' safety and doctors' legal protection and can be used to have a patient history that can be easily accessed. 
 
-<img src="smart_guy.gif" alt="Smart guy touching his head" width="auto" height="350" style= "margin-left: auto; margin-right: auto; width: 100%">
+<img src="smart_guy.gif" alt="Smart guy touching his head" width="auto" height="250" style= "position: relative;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    max-width: 100%;">
 
 
 You can use a phone adaptor for microscopes to do it. Such as MicroREC. What changes between a regular phone adaptor to MicroREC is the quality of german lenses, and it does not occupy the binoculars, letting your work freely without interruptions. 
 
 If you're also a med teacher, go beyond representations from books and bring real cases to classes. It's very easy to add photos and videos to presentations, stream them or send them to your students directly from your device. Here you can see an example of how  <a href= "https://oftalmouniversity.com/" class="links_post" target="t_blank">Ophthalmo University</a> use to teach residents from all over the world with our optical system to live stream their classes. 
 
-
-<iframe width='420' height='315' src='https://www.instagram.com/p/CfMMSKZDMV5/?hl=en' frameborder="0"></iframe>
-
+ <iframe
+    src="https://www.instagram.com/p/CfMMSKZDMV5/embed"
+    frameborder="0"
+    scrolling="yes"
+    allowtransparency
+    width="auto"
+    height="600"
+    style="position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);"
+  ></iframe>
 
 
 Are you going to a congress or a medical event? You can also share with your colleagues and even present your own material as you prefer: creating your own material previously or live streaming.

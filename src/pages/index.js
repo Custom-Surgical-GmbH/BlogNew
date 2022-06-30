@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery, withPrefix } from "gatsby"
 import "@fontsource/red-hat-display";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Top from "../components/top"
 import Bio from "../components/bio"
@@ -21,6 +20,7 @@ const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
+
 
 
   const { crumbs } = useBreadcrumb({
@@ -69,7 +69,6 @@ const BlogIndex = ({ data, location }) => {
         <div>Most viewed</div>
         <hr className="line"></hr>
       </div>
-      
       <Top />
       <Cat />
      
@@ -162,7 +161,7 @@ const BlogIndex = ({ data, location }) => {
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
+                        __html: post.frontmatter.description ,
                       }}
                       itemProp="description"
                     />
