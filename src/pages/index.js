@@ -14,6 +14,7 @@ import logo from "/src/images/logo.png"
 import MyCustomBreadcrumb from "../components/breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import { style } from "@mui/system";
+
 // Test
 
 const BlogIndex = ({ data, location }) => {

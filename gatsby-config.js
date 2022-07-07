@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 module.exports = {
 pathPrefix: `/blog`,
-assetPrefix: `https://blog.customsurgical.co/blog`,
+//assetPrefix: `https://blog.customsurgical.co/blog`,
   siteMetadata: { 
     
     title: `Custom Surgical`,

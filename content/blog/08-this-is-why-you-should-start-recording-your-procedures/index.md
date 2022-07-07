@@ -5,7 +5,7 @@ tags: ["Technology"]
 description: "From simple actions such as receiving exam results on your mobile phone or having a second opinion from another colleague in real-time, technology is getting more present in our lives daily to improve it. Get to know all the reasons why you should start recording now."
 image: "./cover_whyyoushould.jpg"
 views: 900
-By: Stephanie Ramos
+author: by Stephanie Ramos
 ---
 
 <h1><b>This is why you should start recording your procedures.</b></h1>
