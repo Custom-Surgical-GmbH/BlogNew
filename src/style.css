@@ -237,6 +237,10 @@ a {
   color: var(--color-primary);
 }
 
+iframe{
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
 
 
 /* Custom classes */
