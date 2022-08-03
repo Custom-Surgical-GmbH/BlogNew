@@ -3,7 +3,7 @@ title: The new ophthalmology tendencies for 2022
 date: 2022-07-19
 tags: ["Technology"]
 description: "We selected some of the new ophthalmology trends of 2022 you need to know. Read now!"
-image: "./classes.jpeg.jpg"
+image: "./classes.jpg"
 author: by Stephanie Ramos
 views: 900
 ---
