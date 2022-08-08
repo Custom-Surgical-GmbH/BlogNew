@@ -3,10 +3,10 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SubscriptionBanner from "../components/banner"
-
 import ShareButtons from "../components/share"
+import ShareButtonsWhite from "../components/share_white"
 
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
@@ -29,46 +29,40 @@ const BlogPostTemplate = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
 
-  console.log(data)
-
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={post.frontmatter.description}
       />
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <header style={{ backgroundColor: "#202026" }}>
+          {" "}
+          <Breadcrumb location={location} crumbLabel={post.frontmatter.title} />
           <div className="flex_post">
             <div className="blog_left">
-              <Link
-                className="header-link-home"
-                to="/"
-                style={{ color: "black" }}
+              <h1
+                style={{ marginBottom: "15%", color: "white" }}
+                itemProp="headline"
               >
-                &#8592;Blog
-              </Link>
-
-              <h2 style={{ marginBottom: "15%" }} itemProp="headline">
                 {post.frontmatter.title}
-              </h2>
+              </h1>
               <div>
                 {post.frontmatter.tags.map((tag, i) => [
                   <div
                     key={i}
                     className={
                       tag === "News"
-                                ? "tags-news"
-                                : tag === "Ophthalmology"
-                                ? "tags-ophthalmology"
-                                : tag === "Technology"
-                                ? "tags-technology"
-                                
-                                : "tags-news"
+                        ? "tags-news"
+                        : tag === "Ophthalmology"
+                        ? "tags-ophthalmology"
+                        : tag === "Technology"
+                        ? "tags-technology"
+                        : "tags-news"
                     }
                   >
                     {tag}
@@ -77,21 +71,23 @@ const BlogPostTemplate = ({ data, location }) => {
                 ])}
               </div>
 
-              <div style={{ marginTop: "5%" }}>{post.frontmatter.date}</div>
+              <div style={{ marginTop: "5%", color: "white" }}>
+                {post.frontmatter.date}
+              </div>
               <div
                 style={{
                   marginTop: "5%",
-                  fontWeight: "bold",
-                  fontSize: "20px",
+                  fontSize: "16px",
+                  color: "white",
                 }}
               >
                 {post.frontmatter.author}
               </div>
 
-              <div className="sharing_icon">
+              <div className="sharing_icon" style={{ color: "white" }}>
                 {" "}
                 Share
-                <ShareButtons
+                <ShareButtonsWhite
                   url={url}
                   title={post.frontmatter.title}
                   description={post.frontmatter.description}
@@ -102,9 +98,10 @@ const BlogPostTemplate = ({ data, location }) => {
               <GatsbyImage
                 image={getImage(post.frontmatter.image)}
                 key=" "
+                alt={post.frontmatter.title}
                 imgStyle={{
                   borderRadius: "5px",
-                  boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                  boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                 }}
                 style={{
                   maxHeight: "550px",
@@ -122,32 +119,31 @@ const BlogPostTemplate = ({ data, location }) => {
           />
         </div>
       </article>
-      <nav 
-        className="blog-post-nav"
-        
-      >
-        <ul className="ul_arrow"
-         
-        >
+      <nav className="blog-post-nav">
+        <ul className="ul_arrow">
           <li
             style={{
               width: "45%",
+              display: "flex",
+              justifyContent: "flex-start",
             }}
           >
             {previous && (
               <Link to={previous.fields.slug} rel="prev" className="prev">
-                &#10094; {previous.frontmatter.title}
+                &#10094; Previous
               </Link>
             )}
           </li>
           <li
             style={{
               width: "45%",
+              display: "flex",
+              justifyContent: "flex-end",
             }}
           >
             {next && (
               <Link to={next.fields.slug} rel="next" className="prev">
-                {next.frontmatter.title} &#10095;
+                Next &#10095;
               </Link>
             )}
           </li>
@@ -188,7 +184,11 @@ const BlogPostTemplate = ({ data, location }) => {
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          justifyContent={{ xs: "center", sm: "flex-start" }}
+        >
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
@@ -201,7 +201,6 @@ const BlogPostTemplate = ({ data, location }) => {
                 key={post.fields.slug}
                 style={{
                   width: "80%",
-                  
                 }}
               >
                 <article
@@ -215,9 +214,10 @@ const BlogPostTemplate = ({ data, location }) => {
                       <GatsbyImage
                         image={getImage(post.frontmatter.image)}
                         key=""
+                        alt={title}
                         imgStyle={{
                           borderRadius: "5px",
-                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                         }}
                         style={{
                           borderRadius: "5px",
@@ -233,7 +233,7 @@ const BlogPostTemplate = ({ data, location }) => {
                           formats={["auto", "webp", "avif"]}
                           src="../images/timer.png"
                           quality={100}
-                          alt="Profile picture"
+                          alt="timer image"
                         />
                         <div className="timeread">
                           &#160;{post.timeToRead} mins
@@ -241,7 +241,7 @@ const BlogPostTemplate = ({ data, location }) => {
                       </div>
                     </div>
 
-                    <h2 className="h2_arc">
+                    <h1 className="h2_arc">
                       <Link
                         to={post.fields.slug}
                         itemProp="url"
@@ -249,14 +249,14 @@ const BlogPostTemplate = ({ data, location }) => {
                       >
                         {title}
                       </Link>
-                    </h2>
+                    </h1>
 
                     <div></div>
                   </header>
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.description || post.excerpt,
+                        __html: post.description,
                       }}
                       itemProp="description"
                     />

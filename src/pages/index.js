@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-
+import { Link, graphql, useStaticQuery, withPrefix } from "gatsby"
+import "@fontsource/red-hat-display";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -11,11 +11,27 @@ import SubscriptionBanner from "../components/banner"
 import { Box, Grid, Alert } from "@mui/material"
 import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
+import MyCustomBreadcrumb from "../components/breadcrumbs"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
+import { style } from "@mui/system";
+
+// Test
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
+
+
+
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: "Blog",
+    
+    crumbSeparator: " > ",
+    crumbStyle: { color: "#666" },
+    crumbActiveStyle: { color: "orange" },
+  })
 
   const showMoreItems = () => {
     if (data.allMarkdownRemark.totalCount > visible) {
@@ -47,11 +63,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="header_logo">
-        <Link className="header-link-home" to="/">
-          <header className="global-header">{header}</header>{" "}
-        </Link>
-      </div>
+    
       <Seo title="MedTech Blog" />
       <Bio />
       <div className="viewed">
@@ -60,25 +72,24 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <Top />
       <Cat />
+     
+    
       <div className="viewed">
         <div>Recent Articles</div>
         <hr style={{ margin: 0 }}></hr>
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}                
-         justifyContent={{xs: 'center', sm:'flex-start'}}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          justifyContent={{ xs: "center", sm: "flex-start" }}
+        >
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
             return (
-              <Grid
-                item
-                xs={10}
-                md={4}
-                sm={6}
-                key={post.fields.slug}
-              >
+              <Grid item xs={10} md={4} sm={6} key={post.fields.slug}>
                 <article
                   className="post-list-item"
                   itemScope
@@ -90,9 +101,10 @@ const BlogIndex = ({ data, location }) => {
                       <GatsbyImage
                         image={getImage(post.frontmatter.image)}
                         key=""
+                        alt={title}
                         imgStyle={{
                           borderRadius: "5px",
-                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                         }}
                         style={{
                           borderRadius: "5px",
@@ -127,7 +139,7 @@ const BlogIndex = ({ data, location }) => {
                           formats={["auto", "webp", "avif"]}
                           src="../images/timer.png"
                           quality={100}
-                          alt="Profile picture"
+                          alt="timer image"
                         />
                         <div className="timeread">
                           &#160;{post.timeToRead} mins
@@ -135,7 +147,7 @@ const BlogIndex = ({ data, location }) => {
                       </div>
                     </div>
 
-                    <h2 className="h2_arc">
+                    <h1 className="h2_arc">
                       <Link
                         to={post.fields.slug}
                         itemProp="url"
@@ -143,14 +155,14 @@ const BlogIndex = ({ data, location }) => {
                       >
                         {title}
                       </Link>
-                    </h2>
+                    </h1>
 
                     <div></div>
                   </header>
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
+                        __html: post.frontmatter.description ,
                       }}
                       itemProp="description"
                     />

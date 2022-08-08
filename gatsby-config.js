@@ -1,20 +1,26 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-;(module.exports = {
-  siteMetadata: {
+module.exports = {
+//pathPrefix: `/blog`,
+//assetPrefix: `https://blog.customsurgical.co/blog`,
+  siteMetadata: { 
+    
     title: `Custom Surgical`,
     author: {
       name: ` `,
       summary: ` `,
     },
-    description: ` `,
-    siteUrl: `https://customsurgical.co/blog/`,
+    description: ` Latest company updates, documentations, MedTech news and trends, and much more. Check out our blog and subscribe to our email in order to be ...    `,
+    siteUrl: `https://blog.customsurgical.co/`,
     social: {
       twitter: ` `,
     },
   },
+
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,6 +28,30 @@ require("dotenv").config({
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
+    },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /images/ // See below to configure properly
+    //     }
+    //   }
+    // },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      // options: {
+      //   // defaultCrumb: optional To create a default crumb
+      //   // see Click Tracking default crumb example below
+      //   defaultCrumb: {
+      //     location: {
+      //       pathname: "/",
+      //     },
+         
+      //   },
+      //   // usePathPrefix: optional, if you are using pathPrefix above
+      //   usePathPrefix: '/blog',
+      // }
+      
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -40,16 +70,22 @@ require("dotenv").config({
               maxWidth: 630,
             },
           },
+          
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-instagram-embed',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              width: 320,
+              height: 320,
             },
+          }, {
+           resolve: `gatsby-remark-responsive-iframe`,
+            
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+       
       },
     },
     {
@@ -110,7 +146,7 @@ require("dotenv").config({
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                  description: node.frontmatter.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -161,88 +197,47 @@ require("dotenv").config({
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
-}),
-  {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      // You can add multiple tracking ids and a pageview event will be fired for all of them.
-      trackingIds: [
-        "GA-TRACKING_ID", // Google Analytics / GA
-        "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-        "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-      ],
-      // This object gets passed directly to the gtag config command
-      // This config will be shared across all trackingIds
-      gtagConfig: {
-        optimize_id: "OPT_CONTAINER_ID",
-        anonymize_ip: true,
-        cookie_expires: 0,
-      },
-      // This object is used for configuration specific to this plugin
-      pluginConfig: {
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Defaults to https://www.googletagmanager.com
-        origin: "YOUR_SELF_HOSTED_ORIGIN",
-      },
-    },
-  },
-  {
-    resolve: `gatsby-plugin-google-analytics-reporter`,
-    options: {
-      email: process.env.CLIENT_EMAIL,
-      privateKey: process.env.PRIVATE_KEY,
-      viewId: process.env.VIEWID,
-      startDate: `30daysAgo`,
-      endDate: `today`,
-      pageSize: 10000,
-    },
-  },
-  // { resolve: 'gatsby-plugin-mailchimp',
-  //     options: {
-  //         endpoint: 'https://customsurgical.us1.list-manage.com/subscribe/post?u=d92910af4ec0988bccf99fa6a&amp;id=fde7015bd7', // string; add your MC list endpoint here; see instructions below
-  //         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
-  // }},
 
-  {
-    resolve: `gatsby-plugin-social9-socialshare`,
-    options: {
-      content: `xxxxxxxxxx`,
+    {
+      resolve: `gatsby-plugin-social9-socialshare`,
+      options: {
+        content: `xxxxxxxxxx`,
+      },
     },
-  },
-  {
-    resolve: `gatsby-plugin-paginate`,
-    options: {
-      sources: [
-        {
-          path: `/page`,
-          pageSize: 5,
-          template: `${__dirname}/src/templates/page.js`,
-          serialize: results => results.allMarkdownRemark.edges,
-          query: `{
-              allMarkdownRemark {
-                edges {
-                  node {
-                    excerpt(pruneLength: 250)
-                    html
-                    id
-                    timeToRead
-                    frontmatter {
-                      date
-                      path
-                      tags
-                      title
-                    }
-                  }
-                }
-              }
-            }`,
-        },
-      ],
-    },
-  }
+    // {
+    //   resolve: `gatsby-plugin-paginate`,
+    //   options: {
+    //     sources: [
+    //       {
+    //         path: `/page`,
+    //         pageSize: 5,
+    //         template: `${__dirname}/src/templates/page.js`,
+    //         serialize: results => results.allMarkdownRemark.edges,
+    //         query: `{
+    //             allMarkdownRemark {
+    //               edges {
+    //                 node {
+    //                   excerpt(pruneLength: 250)
+    //                   html
+    //                   id
+    //                   timeToRead
+    //                   frontmatter {
+    //                     date
+    //                     path
+    //                     tags
+    //                     title
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }`,
+    //       },
+    //     ],
+    //   },
+    // },
+
+
+
+   
+  ],
+}

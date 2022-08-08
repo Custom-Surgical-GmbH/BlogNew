@@ -62,6 +62,7 @@ const Top = ({ data1 }) => {
               > <GatsbyImage
             image={getImage(data.allMarkdownRemark.nodes[0].frontmatter.image)}
             key=""
+            alt={data.allMarkdownRemark.nodes[0].frontmatter.title}
             imgStyle={{
               borderRadius: "5px",
             }}
@@ -101,21 +102,21 @@ const Top = ({ data1 }) => {
                 formats={["auto", "webp", "avif"]}
                 src="../images/timer.png"
                 quality={100}
-                alt="Profile picture"
+                alt="timer image"
               />
               <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[0].timeToRead} mins</div>
             </div>
           </div>
           <div className="text_flex">
-            <div className="article_h2">
+            <div className="article_h2" id="h2">
               {" "}
               <Link
                 to={data.allMarkdownRemark.nodes[0].fields.slug}
                 itemProp="url"
               >
-                <h2 className="h2_without">
+                <h1 className="h2_without">
                   {data.allMarkdownRemark.nodes[0].frontmatter.title}
-                </h2>
+                </h1>
               </Link>
             </div>
 
@@ -132,6 +133,7 @@ const Top = ({ data1 }) => {
               > <GatsbyImage
             image={getImage(data.allMarkdownRemark.nodes[1].frontmatter.image)}
             key=""
+            alt={data.allMarkdownRemark.nodes[1].frontmatter.title}
             imgStyle={{
               borderRadius: "5px",
               boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
@@ -171,21 +173,21 @@ const Top = ({ data1 }) => {
                 formats={["auto", "webp", "avif"]}
                 src="../images/timer.png"
                 quality={100}
-                alt="Profile picture"
+                alt="timer image"
               />
               
             <div className = "timeread">&#160;{data.allMarkdownRemark.nodes[1].timeToRead} mins</div></div>
           </div>
           <div className="text_flex">
-            <div className="article_h2">
+            <div className="article_h2" id="h2">
               {" "}
               <Link
                 to={data.allMarkdownRemark.nodes[1].fields.slug}
                 itemProp="url"
               >
-                <h2 className="h2_without">
+                <h1 className="h2_without">
                   {data.allMarkdownRemark.nodes[1].frontmatter.title}
-                </h2>
+                </h1>
               </Link>
             </div>
 

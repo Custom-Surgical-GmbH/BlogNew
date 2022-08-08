@@ -9,11 +9,20 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
+import MyCustomBreadcrumb from "../components/breadcrumbs"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 
 const BlogIndex = ({ data, location }) => {
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
+
+
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: "Technology",
+    crumbSeparator: " > ",
+  })
 
   const showMoreItems = () => {
     if (data.allMarkdownRemark.totalCount > visible) {
@@ -45,15 +54,11 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <div className="header_logo">
-        <Link className="header-link-home" to="/">
-          <header className="global-header">{header}</header>{" "}
-        </Link>
-      </div>
+    <Layout location={location} title={siteTitle} crumbLabel="Technology">
+      
       <Seo title="All posts" />
 
-      <div className="viewed" style={{ width: "90%" }}>
+      <div className="viewed" style={{ width: "90%", paddingTop: "3em" }}>
         <div
           style={{
             color: "#00C5B7",
@@ -65,6 +70,7 @@ const BlogIndex = ({ data, location }) => {
         >
           Technology
         </div>
+        <MyCustomBreadcrumb crumbs={crumbs} />
         <div
           style={{
             fontWeight: "500",
@@ -77,7 +83,7 @@ const BlogIndex = ({ data, location }) => {
         <hr style={{ margin: 0 }}></hr>
       </div>
 
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} marginLeft={{sm: "72px" , xs: "0px"}} marginRight={{sm: "72px" , xs: "0px"}}>
         <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
@@ -92,6 +98,7 @@ const BlogIndex = ({ data, location }) => {
                 
               >
                 <article
+                style={{width: "100%"}}
                   className="post-list-item"
                   itemScope
                   itemType="http://schema.org/Article"
@@ -102,6 +109,7 @@ const BlogIndex = ({ data, location }) => {
                       <GatsbyImage
                         image={getImage(post.frontmatter.image)}
                         key=""
+                        alt={title}
                         imgStyle={{
                           borderRadius: "5px",
                           boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
@@ -121,7 +129,7 @@ const BlogIndex = ({ data, location }) => {
                           formats={["auto", "webp", "avif"]}
                           src="../images/timer.png"
                           quality={100}
-                          alt="Profile picture"
+                          alt="timer image"
                         />
                         <div className="timeread">
                           &#160;{post.timeToRead} mins
@@ -129,7 +137,7 @@ const BlogIndex = ({ data, location }) => {
                       </div>
                     </div>
 
-                    <h2 className="h2_arc">
+                    <h1 className="h2_arc">
                       <Link
                         to={post.fields.slug}
                         itemProp="url"
@@ -137,13 +145,13 @@ const BlogIndex = ({ data, location }) => {
                       >
                         {title}
                       </Link>
-                    </h2>
+                    </h1>
                     <div> </div>
                   </header>
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
+                        __html: post.frontmatter.description ,
                       }}
                       itemProp="description"
                     />
