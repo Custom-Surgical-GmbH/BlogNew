@@ -3,7 +3,7 @@ title: 5 questions for Dr. Ticiana de Francesco
 date: 2022-08-09
 tags: ["Story"]
 description: "Know how MicroREC is part of her daily routine as a glaucoma expert and more!"
-image: "./Prof.png"
+image: "./Ticiana-1.jpg"
 author: by Stephanie Ramos
 views: 1000
 ---
@@ -11,6 +11,8 @@ views: 1000
 In Custom Surgical we work daily to <b>make healthcare more accessible and easier worldwide - and so do our customers!</b> There are several people discovering how <a class="links_post" href="https://blog.customsurgical.co/07-5-ways-to-use-MicroREC-as-a-working-tool/"> MicroREC (an optical system that digitizes your microscope or slit lamp)</a> can make their routine easier and provide more quality care for their patients and one of those people is dr. Ticiana De Franceso.
 
 De Francesco is an ophthalmologist with subspecialty expertise in glaucoma and minimally invasive surgeries, with a Glaucoma Fellowship at the University of Campinas (UNICAMP) and a Glaucoma and Advanced Anterior Segment Fellowship under the mentorship of the world-renowned and pioneer in Microinvasive Glaucoma Surgery (MIGS) ophthalmologist Dr. Ike Ahmed at the University of Toronto.
+
+<img src="Profile.jpg" alt="Dr. Ticiana de Francesco" width="300" height="400">
 
 MicroREC is already present on her daily work routine as an ophthalmologist, either receiving advice for her mentor during a surgery or using the recorded material for individual and collective learning. She was even invited by BRASCRS (Brazilian Association of Cataract and Refractive Surgery) to speak about MicroREC in the "innovation in ophthalmology" session this year.
 
@@ -28,11 +30,11 @@ Sometimes I implant a multifocal lens and the patient wants to see what that len
 
 <iframe
     class='iframe-instagram'
-    src="https://www.instagram.com/p/CZaOn0mOw0_/embed/captioned/"  
+    src="https://www.instagram.com/p/Cd0uhZbD8Ba/embed/captioned/"  
     frameborder="0"
     scrolling="yes"
     allowtransparency
-    height= "750"
+    height= "850"
     width="auto"
     minWidth="326"
     maxWidth="540"
