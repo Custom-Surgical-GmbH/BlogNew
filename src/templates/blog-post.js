@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SubscriptionBanner from "../components/banner"
 import ShareButtons from "../components/share"
 import ShareButtonsWhite from "../components/share_white"
@@ -25,12 +25,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const { previous, next } = data
   const url = typeof window !== "undefined" ? window.location.href : ""
-  
 
   const [items, setItems] = useState([])
   const [visible, setVisible] = useState(3)
-
-  console.log(data)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -43,16 +40,15 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header style={{backgroundColor: "#202026"}}> <Breadcrumb location={location} crumbLabel={post.frontmatter.title} />
+        <header style={{ backgroundColor: "#202026" }}>
+          {" "}
+          <Breadcrumb location={location} crumbLabel={post.frontmatter.title} />
           <div className="flex_post">
-         
             <div className="blog_left">
-              
-
-             
-
-
-              <h1 style={{ marginBottom: "15%", color: "white" }} itemProp="headline">
+              <h1
+                style={{ marginBottom: "15%", color: "white" }}
+                itemProp="headline"
+              >
                 {post.frontmatter.title}
               </h1>
               <div>
@@ -61,13 +57,12 @@ const BlogPostTemplate = ({ data, location }) => {
                     key={i}
                     className={
                       tag === "News"
-                                ? "tags-news"
-                                : tag === "Ophthalmology"
-                                ? "tags-ophthalmology"
-                                : tag === "Technology"
-                                ? "tags-technology"
-                                
-                                : "tags-news"
+                        ? "tags-news"
+                        : tag === "Ophthalmology"
+                        ? "tags-ophthalmology"
+                        : tag === "Technology"
+                        ? "tags-technology"
+                        : "tags-news"
                     }
                   >
                     {tag}
@@ -76,18 +71,20 @@ const BlogPostTemplate = ({ data, location }) => {
                 ])}
               </div>
 
-              <div style={{ marginTop: "5%", color: "white" }}>{post.frontmatter.date}</div>
+              <div style={{ marginTop: "5%", color: "white" }}>
+                {post.frontmatter.date}
+              </div>
               <div
                 style={{
                   marginTop: "5%",
-                  fontSize: "16px", 
-                  color: "white"
+                  fontSize: "16px",
+                  color: "white",
                 }}
               >
                 {post.frontmatter.author}
               </div>
 
-              <div className="sharing_icon" style={{color: "white"}}>
+              <div className="sharing_icon" style={{ color: "white" }}>
                 {" "}
                 Share
                 <ShareButtonsWhite
@@ -104,7 +101,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 alt={post.frontmatter.title}
                 imgStyle={{
                   borderRadius: "5px",
-                  boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                  boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                 }}
                 style={{
                   maxHeight: "550px",
@@ -122,16 +119,13 @@ const BlogPostTemplate = ({ data, location }) => {
           />
         </div>
       </article>
-      <nav 
-        className="blog-post-nav"
-        
-      >
-        <ul className="ul_arrow"
-         
-        >
+      <nav className="blog-post-nav">
+        <ul className="ul_arrow">
           <li
             style={{
-              width: "45%", display: "flex", justifyContent: "flex-start"
+              width: "45%",
+              display: "flex",
+              justifyContent: "flex-start",
             }}
           >
             {previous && (
@@ -142,7 +136,9 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
           <li
             style={{
-              width: "45%", display: "flex", justifyContent: "flex-end"
+              width: "45%",
+              display: "flex",
+              justifyContent: "flex-end",
             }}
           >
             {next && (
@@ -188,7 +184,11 @@ const BlogPostTemplate = ({ data, location }) => {
       </div>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={{xs: 'center', sm:'flex-start'}}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          justifyContent={{ xs: "center", sm: "flex-start" }}
+        >
           {posts.slice(0, visible).map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
@@ -201,7 +201,6 @@ const BlogPostTemplate = ({ data, location }) => {
                 key={post.fields.slug}
                 style={{
                   width: "80%",
-                  
                 }}
               >
                 <article
@@ -218,7 +217,7 @@ const BlogPostTemplate = ({ data, location }) => {
                         alt={title}
                         imgStyle={{
                           borderRadius: "5px",
-                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)"
+                          boxShadow: "1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
                         }}
                         style={{
                           borderRadius: "5px",
@@ -257,7 +256,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.description ,
+                        __html: post.description,
                       }}
                       itemProp="description"
                     />

@@ -243,6 +243,7 @@ iframe{
 }
 
 
+
 /* Custom classes */
 
 .global-wrapper {
@@ -1178,6 +1179,17 @@ a.bm-item a.menu-item{
 max-width: 100%;
 
 }
+
+/* Instagram post */
+.iframe-instagram {
+  background: #FFF;
+  border: 0; 
+  border-radius: 3px;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
+  margin: 1px; 
+  padding:0; 
+}
+
 
 /* Media queries */
 
