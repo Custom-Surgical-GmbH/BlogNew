@@ -481,19 +481,19 @@ iframe{
   text-transform: uppercase;
 }
 
-.tags-education{
-  color: #8F4FFF;
+.tags-how-to{
+  color: #FFA100;
   padding: 5px;
   padding: 5px 35px;
   width: max-content;
-  background: #8F4FFF33;
+  background: #FFA10033;
   border-radius: 5px;
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
 }
 
-.tags-ophthalmology{
+.tags-stories{
   color: #8F4FFF;
   padding: 5px;
   padding: 5px 35px;

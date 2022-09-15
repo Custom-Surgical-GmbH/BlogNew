@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery, withPrefix } from "gatsby"
-import "@fontsource/red-hat-display";
+import "@fontsource/red-hat-display"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -13,7 +13,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import logo from "/src/images/logo.png"
 import MyCustomBreadcrumb from "../components/breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
-import { style } from "@mui/system";
+import { style } from "@mui/system"
 
 // Test
 
@@ -22,12 +22,10 @@ const BlogIndex = ({ data, location }) => {
   const [visible, setVisible] = useState(3)
   const [enabled, setEnabled] = useState(true)
 
-
-
   const { crumbs } = useBreadcrumb({
     location,
     crumbLabel: "Blog",
-    
+
     crumbSeparator: " > ",
     crumbStyle: { color: "#666" },
     crumbActiveStyle: { color: "orange" },
@@ -63,7 +61,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-    
       <Seo title="MedTech Blog" />
       <Bio />
       <div className="viewed">
@@ -72,8 +69,7 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <Top />
       <Cat />
-     
-    
+
       <div className="viewed">
         <div>Recent Articles</div>
         <hr style={{ margin: 0 }}></hr>
@@ -121,10 +117,12 @@ const BlogIndex = ({ data, location }) => {
                             className={
                               tag === "News"
                                 ? "tags-news"
-                                : tag === "Ophthalmology"
-                                ? "tags-ophthalmology"
                                 : tag === "Technology"
                                 ? "tags-technology"
+                                : tag === "Stories"
+                                ? "tags-stories"
+                                : tag === "How to"
+                                ? "tags-how-to"
                                 : "tags-news"
                             }
                           >
@@ -162,7 +160,7 @@ const BlogIndex = ({ data, location }) => {
                   <section>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description ,
+                        __html: post.frontmatter.description,
                       }}
                       itemProp="description"
                     />

@@ -1,7 +1,7 @@
 ---
 title: 5 questions for Dr. Ticiana de Francesco
 date: 2022-08-09
-tags: ["Story"]
+tags: ["Stories"]
 description: "Know how MicroREC is part of her daily routine as a glaucoma expert and more!"
 image: "./Ticiana-1.jpg"
 author: by Stephanie Ramos

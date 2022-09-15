@@ -58,10 +58,12 @@ const BlogPostTemplate = ({ data, location }) => {
                     className={
                       tag === "News"
                         ? "tags-news"
-                        : tag === "Ophthalmology"
-                        ? "tags-ophthalmology"
                         : tag === "Technology"
                         ? "tags-technology"
+                        : tag === "Stories"
+                        ? "tags-stories"
+                        : tag === "How to"
+                        ? "tags-how-to"
                         : "tags-news"
                     }
                   >
