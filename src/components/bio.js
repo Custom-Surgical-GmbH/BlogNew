@@ -60,6 +60,7 @@ const Bio = post => {
           borderRadius: "5px",
         }}
         style={{
+          maxHeight: "400px",
           borderRadius: "5px",
           boxShadow: " 1px 1px 1px 2px rgba(0, 0, 0, 0.05)",
           width: "100%"

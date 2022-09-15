@@ -23,6 +23,7 @@ portfolio collectively, working to bring the most innovative OPI applications to
 <p style="text-align: center; font-size: 13px">Cataract Surgery in Nigeria by Fundación Elena Barraquer.</p>
 We caught up with Federico Acosta, Custom Surgical’s founder, to discuss how his company is modernizing surgery by providing an effective way to record, store, and share medical images and leverage them to diagnose and treat patients.
 <pre></pre>
+
 <b>Tell us about your company.</b>
 <p style="margin-top: 0.5em;">At <a href="customsurgical.co" class="links_post">Custom Surgical</a>, we are digitizing medical microscopes with a smartphone-based platform and enhancing their functionalities with mobile applications. Our optical system, the MicroREC, allows ophthalmologists to connect any smartphone camera to the optical path of their microscope. Our data management platform allows them to easily store and share their videos and images on the cloud. We are also developing an Augmented Reality (AR) platform that helps ophthalmologists train during different surgical procedures and later on improve their surgi-
 cal outcomes.</p>
@@ -67,6 +68,7 @@ croREC, followed by the launch of our software platform in 2021. Our sales conti
 We target every ophthalmologist around the world. Our hardware product can also be used by dentists, ENT special-
 ists, and neurosurgeons, among other healthcare providers.
 
+
 <p style="margin-bottom: 0.5em;"><b>What made you look to Rochester to further your product?</b></p>
 Rochester is the perfect environment for our company. It has an amazing optics and photonics community, which has connected us to great companies that we are eager to work with. For example, Custom Surgical is now working with local resources on the manufacturing and development of our optical products. 
 
@@ -79,9 +81,13 @@ nities to gather information from the users of our technology.
 Luminate provides us access to the Rochester community, training resources, and a mentor network that is invaluable at the current stage of our company. The more time we spend in Rochester and with the hospitable, hardworking
 Luminate team, the more empowered we feel to continue our journey.
 
+
+
 <p style="margin-bottom: 0.5em;"><b>What do you hope to achieve during your time in
 Luminate?</b></p>
 We hope to select partners to outsource our hardware manufacturing in the US, connect with ophthalmic insti- tutions like the Flaum Eye Institute, and secure our next financing round. The resources we receive from Luminate help us make more well-informed decisions to exponentially grow our business.
+
+
 
 <p style="margin-bottom: 0.5em;"><b>If your company wins at Finals 2022, what do you
 plan to do with the follow-on funding?</b></p>
